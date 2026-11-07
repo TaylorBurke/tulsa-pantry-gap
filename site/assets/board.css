@@ -30,7 +30,7 @@
   /* map tokens read by map.js */
   --none: #e8e4d8; --out: #f4f1e8;
   --q1: #86b6ef; --q2: #3987e5; --q3: #1c5cab; --q4: #0d366b;
-  --s2: var(--hl-mark); --route: #9c9488; --tract-line: #f4f1e8;
+  --s2: var(--hl-mark); --route: #d6336c; --tract-line: #f4f1e8;
   --muted: #6b6358; --axis: #b8b0a2; --grid: #ddd7ca; --ring: rgba(26, 23, 20, .12);
   --space: 24px;
 }
@@ -138,7 +138,7 @@ main { max-width: 1320px; margin: 0 auto; padding: 0 var(--space) 64px; }
 .tract.out { stroke: var(--axis); }
 .tract.top { stroke: var(--ink); stroke-width: 1.8; }
 .tract.sel { stroke: var(--marker); stroke-width: 3; }
-.route { fill: none; stroke: var(--route); stroke-width: 1.3; vector-effect: non-scaling-stroke; pointer-events: none; }
+.route { fill: none; stroke: var(--route); stroke-width: 1.5; opacity: .85; vector-effect: non-scaling-stroke; pointer-events: none; }
 .pantry { vector-effect: non-scaling-stroke; cursor: pointer; }
 .pantry.open { fill: var(--hl-mark); stroke: var(--ink); stroke-width: 1.5; }
 .pantry.closed, .pantry.unlisted { fill: var(--paper); stroke: var(--ink-2); stroke-width: 1.2; stroke-dasharray: 2 1.6; }

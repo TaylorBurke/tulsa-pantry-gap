@@ -17,7 +17,7 @@
   --accent-text: #1c5cab;
   --none: #e1e0d9;          /* zero / no data: neutral */
   --q1: #86b6ef; --q2: #3987e5; --q3: #1c5cab; --q4: #0d366b;
-  --route: #a3a198;
+  --route: #d6336c;
   --tract-line: #fcfcfb;
   --out: #f9f9f7;           /* not high need, gap layer: outline only */
   --serif: "Iowan Old Style", "Source Serif 4", "Noto Serif", "Palatino Linotype", Palatino, "Charter", Georgia, serif;
@@ -30,7 +30,7 @@
     --grid: #2c2c2a; --axis: #383835; --ring: rgba(255, 255, 255, 0.10);
     --s1: #3987e5; --s2: #d95926; --accent-text: #86b6ef; --none: #262624;
     --q1: #184f95; --q2: #3987e5; --q3: #6da7ec; --q4: #b7d3f6;
-    --route: #6f6d67; --tract-line: #1a1a19; --out: #0d0d0d;
+    --route: #f06595; --tract-line: #1a1a19; --out: #0d0d0d;
   }
 }
 :root[data-theme="dark"] {
@@ -39,7 +39,7 @@
   --grid: #2c2c2a; --axis: #383835; --ring: rgba(255, 255, 255, 0.10);
   --s1: #3987e5; --s2: #d95926; --accent-text: #86b6ef; --none: #262624;
   --q1: #184f95; --q2: #3987e5; --q3: #6da7ec; --q4: #b7d3f6;
-  --route: #6f6d67; --tract-line: #1a1a19; --out: #0d0d0d;
+  --route: #f06595; --tract-line: #1a1a19; --out: #0d0d0d;
 }
 
 * { box-sizing: border-box; }

@@ -16,10 +16,10 @@
   // Layers. Bins are fixed so colors mean the same thing in every window.
   const LAYERS = {
     gap: {
-      title: "High-need tracts: people in poverty who can't reach an open pantry within 30 min",
+      title: "Number of people in poverty in each high-need tract who can't reach an open pantry within 30 min",
       // The gap is high need + low access, so only high-need tracts are filled.
       value: (p) => (p.high_need ? p[`poor_no_access_${state.win}_${state.wait}`] : "out"),
-      bins: [1, 100, 300, 600], labels: ["0", "1–99", "100–299", "300–599", "600+"],
+      bins: [1, 100, 300, 600], labels: ["0 people", "1–99", "100–299", "300–599", "600+ people"],
       zeroIsNone: true,
     },
     noaccess: {
