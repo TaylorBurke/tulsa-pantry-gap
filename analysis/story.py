@@ -8,6 +8,7 @@ Map layers (EPSG:4326, simplified, coordinates rounded to ~1 m):
   site/data/routes.geojson    bus route shapes
 """
 import io
+import re
 import json
 import zipfile
 from datetime import date
@@ -52,7 +53,7 @@ def build():
     t = gpd.read_parquet(DERIVED / "tracts.parquet")
     b = pd.read_parquet(DERIVED / "blocks_access.parquet")
     p = gpd.read_parquet(DERIVED / "pantries.parquet")
-    rank = pd.read_csv(DERIVED / "gap_ranking.csv", dtype={"GEOID": str})
+    rank = pd.read_csv(DERIVED / "gap_ranking.csv", dtype={"GEOID": str, "tract": str})
     checks = json.loads((DERIVED / "checks.json").read_text())
     siting = json.loads((DERIVED / "siting.json").read_text())
     r5p = DERIVED / "validate_r5.json"
@@ -115,6 +116,67 @@ def build():
         lead_example[w] = {"nearest_km": r(d.iloc[0], 1), "within_1_6km": int((d <= 1.6).sum()),
                            "nearest_3_km": [r(x, 1) for x in d.head(3)]}
 
+    # Week grid: for each day and hour, county general pantries holding a regular
+    # session that overlaps the hour (any week, and every week), and buses on the
+    # road (trips running during the hour) for that service day.
+    from transit import load as load_gtfs
+    sess = pd.read_csv(DERIVED / "pantry_sessions.csv")
+    sess = sess[(sess["class"] == "general") & sess.location_id.isin(set(pc.location_id))]
+    _, st_, cal_, _ = load_gtfs()
+    trips_ = st_.groupby("trip_id").agg(dep=("dep", "min"), arr=("arr", "max"), svc=("service_id", "first"))
+    svc_for = {1: cal_.loc[cal_.sunday.astype(int) == 1, "service_id"].tolist(),
+               7: cal_.loc[cal_.saturday.astype(int) == 1, "service_id"].tolist()}
+    weekday_svc = cal_.loc[cal_[["monday", "tuesday", "wednesday", "thursday", "friday"]].astype(int)
+                           .all(axis=1), "service_id"].tolist()
+    HOURS = list(range(6, 22))
+    grid = []
+    for d in range(1, 8):
+        tr = trips_[trips_.svc.isin(svc_for.get(d, weekday_svc))]
+        for h in HOURS:
+            a = sess[(sess.day == d) & (sess.start < (h + 1) * 60) & (sess.end > h * 60)]
+            weekly = a[a.per_month >= WEEKS_PER_MONTH - 0.01].location_id.nunique()
+            grid.append({"day": d, "hour": h, "pantries": int(a.location_id.nunique()),
+                         "pantries_weekly": int(weekly),
+                         "buses": int(((tr.dep < (h + 1) * 60) & (tr.arr > h * 60)).sum())})
+    week_grid = {"hours": HOURS, "cells": grid}
+
+    # Posted special hours for county pantries (holiday closures etc.).
+    sp = pd.read_csv(DERIVED / "pantry_special_hours.csv")
+    names = p.set_index("location_id").name
+    county_ids = set(pc.location_id)
+    txt = lambda v: v if isinstance(v, str) else ""
+    special = [{"name": names.get(r.location_id, ""), "date": r.date, "closed": bool(r.closed),
+                "start": txt(r.start), "end": txt(r.end), "note": txt(r.note)}
+               for r in sp.itertuples() if r.location_id in county_ids]
+
+    # Photo captions: the tract each photographed bus stop sits in, and its access.
+    zg = zipfile.ZipFile(RAW / "gtfs" / "mtta_gtfs.zip")
+    gstops = pd.read_csv(io.BytesIO(zg.read("stops.txt")), dtype=str).set_index("stop_id")
+    gtrips = pd.read_csv(io.BytesIO(zg.read("trips.txt")), dtype=str)
+    gcal = pd.read_csv(io.BytesIO(zg.read("calendar.txt")), dtype=str)
+    sunday_routes = sorted(gtrips[gtrips.service_id.isin(gcal[gcal.sunday == "1"].service_id)].route_id.unique())
+    photos = {}
+    for key, stop_id in {"aero-stop-8005": "8005", "aero-peoria-11th": "7015"}.items():
+        srow = gstops.loc[stop_id]
+        pt = gpd.GeoDataFrame(geometry=gpd.points_from_xy([float(srow.stop_lon)], [float(srow.stop_lat)]), crs="EPSG:4326")
+        hit = gpd.sjoin(pt, t[["GEOID", "NAME", "label", "high_need", "poverty_rate", "geometry"]
+                              + [f"share_{w}_{PRIMARY_WAIT}" for w in WINDOW_ORDER]], predicate="within").iloc[0]
+        photos[key] = {"stop": re.sub(r"^\(\d+\)\s*|\s+(NB|SB|EB|WB)$", "", srow.stop_name).strip(),
+                       "tract": str(hit.NAME), "GEOID": hit.GEOID, "high_need": bool(hit.high_need),
+                       "poverty_rate": r(hit.poverty_rate),
+                       **{f"share_{w}": r(hit[f"share_{w}_{PRIMARY_WAIT}"]) for w in WINDOW_ORDER},
+                       "credit": "G. Edward Johnson", "license": "CC BY 4.0",
+                       "source_url": "https://commons.wikimedia.org/wiki/File:" + {
+                           "aero-stop-8005": "Tulsa_Transit_Aero_bus_stop_8005_OK_2025-03-16_16-05-20_1.jpg",
+                           "aero-peoria-11th": "Aero_bus_stop_7015_S_Peoria_Ave_and_11th_St_Tulsa_OK_2025-07-21_10-08-39.jpg"}[key]}
+    # Publish resized copies (1000px wide) for the site.
+    from PIL import Image
+    (ROOT / "site" / "assets" / "photos").mkdir(parents=True, exist_ok=True)
+    for key in photos:
+        im = Image.open(RAW / "photos" / f"{key}.jpg")
+        im.thumbnail((1000, 1000))
+        im.save(ROOT / "site" / "assets" / "photos" / f"{key}.jpg", quality=80, optimize=True, progressive=True)
+
     tsum = pd.read_csv(DERIVED / "transit_summary.csv")
     headways = {w: float(tsum[(tsum.window == w) & (tsum.wait == PRIMARY_WAIT)].median_headway_min.iloc[0])
                 for w in WINDOW_ORDER}
@@ -143,6 +205,10 @@ def build():
         "top_tracts_with_shaky_component": int((top_tr.n_shaky_components > 0).sum()),
         "top_tracts_total": len(top_tr),
         "lead_example": lead_example,
+        "week_grid": week_grid,
+        "photos": photos,
+        "sunday_routes": sunday_routes,
+        "special_hours": special,
         "median_headway_min": headways,
         "need_component_correlations": need_corr,
         "siting": siting,

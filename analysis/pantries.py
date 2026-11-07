@@ -180,6 +180,21 @@ def build():
     assert g.location_id.is_unique
     assert set(areas.index) <= set(g.location_id), "service_areas.csv names an unknown location"
     g.to_parquet(DERIVED / "pantries.parquet")
+
+    # Posted special hours and closures (public fields only; the finder's
+    # add/update user names are dropped).
+    special = []
+    for x in sch["special_hours"]:
+        for d in x.get("data") or []:
+            special.append({
+                "location_id": d["locationId"], "date": d["specialDate"][:10],
+                "closed": bool(d["closedInd"]),
+                "start": (d.get("startTimeDescr") or "").strip(),
+                "end": (d.get("endTimeDescr") or "").strip(),
+                "note": (d.get("notes") or "").strip(),
+            })
+    pd.DataFrame(special, columns=["location_id", "date", "closed", "start", "end", "note"]) \
+        .to_csv(DERIVED / "pantry_special_hours.csv", index=False)
     gp = g[g.general]
     print(f"pantries: {len(g)} listings, {len(gp)} general pantries "
           f"({int(gp.in_county.sum())} in county), {int((~gp.hours_listed).sum())} without hours; "

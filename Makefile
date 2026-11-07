@@ -27,6 +27,7 @@ check:
 site:
 	$(A) $(PY) story.py
 	$(PY) build_site.py
+	$(PY) build_board.py
 
 validate:
 	cd fetch && $(PY) fetch_osm.py

@@ -6,6 +6,7 @@ dependencies = [
     "geopandas>=1.2.0",
     "numpy>=2.5.4",
     "pandas>=3.1.1",
+    "pillow>=13.0.0",
     "pyarrow>=26.0.1",
     "pyogrio>=0.13.0",
     "requests>=2.34.2",

@@ -1,0 +1,7 @@
+location_id,date,closed,start,end,note
+14371,2026-11-24,False,9:00 AM,2:00 PM,No evening hours
+14371,2026-11-25,False,9:00 AM,12:00 PM,
+14371,2026-11-26,True,,,
+14371,2026-11-27,True,,,
+14371,2026-11-28,True,,,
+14425,2026-11-20,True,,,Closed Thanksgiving Holiday 11/20/26-11/27/26

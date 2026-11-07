@@ -128,7 +128,7 @@
     "window": "weekday_day",
     "rank": 1,
     "GEOID": "40143006701",
-    "tract": 67.01,
+    "tract": "67.01",
     "label": "Tulsa: near W 61st St & 33rd W Ave",
     "need_pctl": 0.875,
     "poverty_rate": 0.318,
@@ -144,7 +144,7 @@
     "window": "weekday_day",
     "rank": 2,
     "GEOID": "40143009104",
-    "tract": 91.04,
+    "tract": "91.04",
     "label": "Unincorporated: near E 66th St N & Lewis Ave",
     "need_pctl": 0.774,
     "poverty_rate": 0.243,
@@ -160,7 +160,7 @@
     "window": "weekday_day",
     "rank": 3,
     "GEOID": "40143008001",
-    "tract": 80.01,
+    "tract": "80.01",
     "label": "Tulsa: near E 46th St N & Lewis Ave",
     "need_pctl": 0.995,
     "poverty_rate": 0.461,
@@ -176,7 +176,7 @@
     "window": "weekday_day",
     "rank": 4,
     "GEOID": "40143011300",
-    "tract": 113.0,
+    "tract": "113",
     "label": "Tulsa: near E Apache St & Yale Ave",
     "need_pctl": 0.769,
     "poverty_rate": 0.28,
@@ -192,7 +192,7 @@
     "window": "weekday_day",
     "rank": 5,
     "GEOID": "40143005900",
-    "tract": 59.0,
+    "tract": "59",
     "label": "Tulsa: near E Pine St & Garnett Rd",
     "need_pctl": 0.928,
     "poverty_rate": 0.252,
@@ -208,7 +208,7 @@
     "window": "weekday_day",
     "rank": 6,
     "GEOID": "40143009101",
-    "tract": 91.01,
+    "tract": "91.01",
     "label": "Unincorporated: near Cincinnati Ave",
     "need_pctl": 0.947,
     "poverty_rate": 0.385,
@@ -224,7 +224,7 @@
     "window": "weekday_day",
     "rank": 7,
     "GEOID": "40143007311",
-    "tract": 73.11,
+    "tract": "73.11",
     "label": "Tulsa: near E 21st St",
     "need_pctl": 0.865,
     "poverty_rate": 0.356,
@@ -240,7 +240,7 @@
     "window": "weekday_day",
     "rank": 8,
     "GEOID": "40143005700",
-    "tract": 57.0,
+    "tract": "57",
     "label": "Tulsa: near E 46th St N & Peoria Ave",
     "need_pctl": 0.832,
     "poverty_rate": 0.265,
@@ -256,7 +256,7 @@
     "window": "weekday_day",
     "rank": 9,
     "GEOID": "40143007646",
-    "tract": 76.46,
+    "tract": "76.46",
     "label": "Tulsa: near E 81st St & Mingo Rd",
     "need_pctl": 0.861,
     "poverty_rate": 0.229,
@@ -272,7 +272,7 @@
     "window": "weekday_day",
     "rank": 10,
     "GEOID": "40143001600",
-    "tract": 16.0,
+    "tract": "16",
     "label": "Tulsa: near E Archer St",
     "need_pctl": 0.899,
     "poverty_rate": 0.343,
@@ -290,7 +290,7 @@
     "window": "weekday_evening",
     "rank": 1,
     "GEOID": "40143006801",
-    "tract": 68.01,
+    "tract": "68.01",
     "label": "Tulsa: near E 61st St & Peoria Ave",
     "need_pctl": 0.99,
     "poverty_rate": 0.472,
@@ -306,7 +306,7 @@
     "window": "weekday_evening",
     "rank": 2,
     "GEOID": "40143007306",
-    "tract": 73.06,
+    "tract": "73.06",
     "label": "Tulsa: near E 31st St & 129th East Ave",
     "need_pctl": 0.856,
     "poverty_rate": 0.34,
@@ -322,7 +322,7 @@
     "window": "weekday_evening",
     "rank": 3,
     "GEOID": "40143009008",
-    "tract": 90.08,
+    "tract": "90.08",
     "label": "Tulsa: near E 41st St & Mingo Rd",
     "need_pctl": 0.918,
     "poverty_rate": 0.326,
@@ -338,7 +338,7 @@
     "window": "weekday_evening",
     "rank": 4,
     "GEOID": "40143007641",
-    "tract": 76.41,
+    "tract": "76.41",
     "label": "Tulsa: near E 81st St & Utica Ave",
     "need_pctl": 0.812,
     "poverty_rate": 0.209,
@@ -354,7 +354,7 @@
     "window": "weekday_evening",
     "rank": 5,
     "GEOID": "40143004600",
-    "tract": 46.0,
+    "tract": "46",
     "label": "Tulsa: near E 21st St",
     "need_pctl": 0.976,
     "poverty_rate": 0.39,
@@ -370,7 +370,7 @@
     "window": "weekday_evening",
     "rank": 6,
     "GEOID": "40143007608",
-    "tract": 76.08,
+    "tract": "76.08",
     "label": "Tulsa: near E 61st St & Peoria Ave",
     "need_pctl": 0.986,
     "poverty_rate": 0.445,
@@ -386,7 +386,7 @@
     "window": "weekday_evening",
     "rank": 7,
     "GEOID": "40143006701",
-    "tract": 67.01,
+    "tract": "67.01",
     "label": "Tulsa: near W 61st St & 33rd W Ave",
     "need_pctl": 0.875,
     "poverty_rate": 0.318,
@@ -402,7 +402,7 @@
     "window": "weekday_evening",
     "rank": 8,
     "GEOID": "40143007311",
-    "tract": 73.11,
+    "tract": "73.11",
     "label": "Tulsa: near E 21st St",
     "need_pctl": 0.865,
     "poverty_rate": 0.356,
@@ -418,7 +418,7 @@
     "window": "weekday_evening",
     "rank": 9,
     "GEOID": "40143009101",
-    "tract": 91.01,
+    "tract": "91.01",
     "label": "Unincorporated: near Cincinnati Ave",
     "need_pctl": 0.947,
     "poverty_rate": 0.385,
@@ -434,7 +434,7 @@
     "window": "weekday_evening",
     "rank": 10,
     "GEOID": "40143007646",
-    "tract": 76.46,
+    "tract": "76.46",
     "label": "Tulsa: near E 81st St & Mingo Rd",
     "need_pctl": 0.861,
     "poverty_rate": 0.229,
@@ -452,7 +452,7 @@
     "window": "saturday",
     "rank": 1,
     "GEOID": "40143006801",
-    "tract": 68.01,
+    "tract": "68.01",
     "label": "Tulsa: near E 61st St & Peoria Ave",
     "need_pctl": 0.99,
     "poverty_rate": 0.472,
@@ -468,7 +468,7 @@
     "window": "saturday",
     "rank": 2,
     "GEOID": "40143000300",
-    "tract": 3.0,
+    "tract": "3",
     "label": "Tulsa: near E Apache St & Harvard Ave",
     "need_pctl": 0.938,
     "poverty_rate": 0.363,
@@ -484,7 +484,7 @@
     "window": "saturday",
     "rank": 3,
     "GEOID": "40143004600",
-    "tract": 46.0,
+    "tract": "46",
     "label": "Tulsa: near E 21st St",
     "need_pctl": 0.976,
     "poverty_rate": 0.39,
@@ -500,7 +500,7 @@
     "window": "saturday",
     "rank": 4,
     "GEOID": "40143007608",
-    "tract": 76.08,
+    "tract": "76.08",
     "label": "Tulsa: near E 61st St & Peoria Ave",
     "need_pctl": 0.986,
     "poverty_rate": 0.445,
@@ -516,7 +516,7 @@
     "window": "saturday",
     "rank": 5,
     "GEOID": "40143006701",
-    "tract": 67.01,
+    "tract": "67.01",
     "label": "Tulsa: near W 61st St & 33rd W Ave",
     "need_pctl": 0.875,
     "poverty_rate": 0.318,
@@ -532,7 +532,7 @@
     "window": "saturday",
     "rank": 6,
     "GEOID": "40143007641",
-    "tract": 76.41,
+    "tract": "76.41",
     "label": "Tulsa: near E 81st St & Utica Ave",
     "need_pctl": 0.812,
     "poverty_rate": 0.209,
@@ -548,7 +548,7 @@
     "window": "saturday",
     "rank": 7,
     "GEOID": "40143009101",
-    "tract": 91.01,
+    "tract": "91.01",
     "label": "Unincorporated: near Cincinnati Ave",
     "need_pctl": 0.947,
     "poverty_rate": 0.385,
@@ -564,7 +564,7 @@
     "window": "saturday",
     "rank": 8,
     "GEOID": "40143001400",
-    "tract": 14.0,
+    "tract": "14",
     "label": "Tulsa: near E Archer St",
     "need_pctl": 0.798,
     "poverty_rate": 0.276,
@@ -580,7 +580,7 @@
     "window": "saturday",
     "rank": 9,
     "GEOID": "40143008800",
-    "tract": 88.0,
+    "tract": "88",
     "label": "Tulsa: near E 11th St & 49th W Ave",
     "need_pctl": 0.933,
     "poverty_rate": 0.359,
@@ -596,7 +596,7 @@
     "window": "saturday",
     "rank": 10,
     "GEOID": "40143007646",
-    "tract": 76.46,
+    "tract": "76.46",
     "label": "Tulsa: near E 81st St & Mingo Rd",
     "need_pctl": 0.861,
     "poverty_rate": 0.229,
@@ -663,6 +663,893 @@
    ]
   }
  },
+ "week_grid": {
+  "hours": [
+   6,
+   7,
+   8,
+   9,
+   10,
+   11,
+   12,
+   13,
+   14,
+   15,
+   16,
+   17,
+   18,
+   19,
+   20,
+   21
+  ],
+  "cells": [
+   {
+    "day": 1,
+    "hour": 6,
+    "pantries": 0,
+    "pantries_weekly": 0,
+    "buses": 0
+   },
+   {
+    "day": 1,
+    "hour": 7,
+    "pantries": 0,
+    "pantries_weekly": 0,
+    "buses": 3
+   },
+   {
+    "day": 1,
+    "hour": 8,
+    "pantries": 1,
+    "pantries_weekly": 1,
+    "buses": 7
+   },
+   {
+    "day": 1,
+    "hour": 9,
+    "pantries": 1,
+    "pantries_weekly": 1,
+    "buses": 8
+   },
+   {
+    "day": 1,
+    "hour": 10,
+    "pantries": 0,
+    "pantries_weekly": 0,
+    "buses": 8
+   },
+   {
+    "day": 1,
+    "hour": 11,
+    "pantries": 2,
+    "pantries_weekly": 2,
+    "buses": 8
+   },
+   {
+    "day": 1,
+    "hour": 12,
+    "pantries": 5,
+    "pantries_weekly": 4,
+    "buses": 8
+   },
+   {
+    "day": 1,
+    "hour": 13,
+    "pantries": 3,
+    "pantries_weekly": 2,
+    "buses": 8
+   },
+   {
+    "day": 1,
+    "hour": 14,
+    "pantries": 0,
+    "pantries_weekly": 0,
+    "buses": 8
+   },
+   {
+    "day": 1,
+    "hour": 15,
+    "pantries": 0,
+    "pantries_weekly": 0,
+    "buses": 8
+   },
+   {
+    "day": 1,
+    "hour": 16,
+    "pantries": 0,
+    "pantries_weekly": 0,
+    "buses": 8
+   },
+   {
+    "day": 1,
+    "hour": 17,
+    "pantries": 0,
+    "pantries_weekly": 0,
+    "buses": 8
+   },
+   {
+    "day": 1,
+    "hour": 18,
+    "pantries": 0,
+    "pantries_weekly": 0,
+    "buses": 8
+   },
+   {
+    "day": 1,
+    "hour": 19,
+    "pantries": 0,
+    "pantries_weekly": 0,
+    "buses": 7
+   },
+   {
+    "day": 1,
+    "hour": 20,
+    "pantries": 0,
+    "pantries_weekly": 0,
+    "buses": 2
+   },
+   {
+    "day": 1,
+    "hour": 21,
+    "pantries": 0,
+    "pantries_weekly": 0,
+    "buses": 0
+   },
+   {
+    "day": 2,
+    "hour": 6,
+    "pantries": 0,
+    "pantries_weekly": 0,
+    "buses": 71
+   },
+   {
+    "day": 2,
+    "hour": 7,
+    "pantries": 0,
+    "pantries_weekly": 0,
+    "buses": 84
+   },
+   {
+    "day": 2,
+    "hour": 8,
+    "pantries": 5,
+    "pantries_weekly": 5,
+    "buses": 82
+   },
+   {
+    "day": 2,
+    "hour": 9,
+    "pantries": 10,
+    "pantries_weekly": 9,
+    "buses": 83
+   },
+   {
+    "day": 2,
+    "hour": 10,
+    "pantries": 15,
+    "pantries_weekly": 14,
+    "buses": 82
+   },
+   {
+    "day": 2,
+    "hour": 11,
+    "pantries": 16,
+    "pantries_weekly": 15,
+    "buses": 83
+   },
+   {
+    "day": 2,
+    "hour": 12,
+    "pantries": 18,
+    "pantries_weekly": 17,
+    "buses": 81
+   },
+   {
+    "day": 2,
+    "hour": 13,
+    "pantries": 19,
+    "pantries_weekly": 19,
+    "buses": 83
+   },
+   {
+    "day": 2,
+    "hour": 14,
+    "pantries": 15,
+    "pantries_weekly": 15,
+    "buses": 82
+   },
+   {
+    "day": 2,
+    "hour": 15,
+    "pantries": 7,
+    "pantries_weekly": 7,
+    "buses": 82
+   },
+   {
+    "day": 2,
+    "hour": 16,
+    "pantries": 2,
+    "pantries_weekly": 2,
+    "buses": 78
+   },
+   {
+    "day": 2,
+    "hour": 17,
+    "pantries": 1,
+    "pantries_weekly": 1,
+    "buses": 83
+   },
+   {
+    "day": 2,
+    "hour": 18,
+    "pantries": 3,
+    "pantries_weekly": 3,
+    "buses": 65
+   },
+   {
+    "day": 2,
+    "hour": 19,
+    "pantries": 2,
+    "pantries_weekly": 2,
+    "buses": 23
+   },
+   {
+    "day": 2,
+    "hour": 20,
+    "pantries": 0,
+    "pantries_weekly": 0,
+    "buses": 11
+   },
+   {
+    "day": 2,
+    "hour": 21,
+    "pantries": 0,
+    "pantries_weekly": 0,
+    "buses": 10
+   },
+   {
+    "day": 3,
+    "hour": 6,
+    "pantries": 0,
+    "pantries_weekly": 0,
+    "buses": 71
+   },
+   {
+    "day": 3,
+    "hour": 7,
+    "pantries": 0,
+    "pantries_weekly": 0,
+    "buses": 84
+   },
+   {
+    "day": 3,
+    "hour": 8,
+    "pantries": 6,
+    "pantries_weekly": 6,
+    "buses": 82
+   },
+   {
+    "day": 3,
+    "hour": 9,
+    "pantries": 15,
+    "pantries_weekly": 15,
+    "buses": 83
+   },
+   {
+    "day": 3,
+    "hour": 10,
+    "pantries": 19,
+    "pantries_weekly": 19,
+    "buses": 82
+   },
+   {
+    "day": 3,
+    "hour": 11,
+    "pantries": 17,
+    "pantries_weekly": 17,
+    "buses": 83
+   },
+   {
+    "day": 3,
+    "hour": 12,
+    "pantries": 19,
+    "pantries_weekly": 19,
+    "buses": 81
+   },
+   {
+    "day": 3,
+    "hour": 13,
+    "pantries": 22,
+    "pantries_weekly": 22,
+    "buses": 83
+   },
+   {
+    "day": 3,
+    "hour": 14,
+    "pantries": 20,
+    "pantries_weekly": 19,
+    "buses": 82
+   },
+   {
+    "day": 3,
+    "hour": 15,
+    "pantries": 10,
+    "pantries_weekly": 9,
+    "buses": 82
+   },
+   {
+    "day": 3,
+    "hour": 16,
+    "pantries": 4,
+    "pantries_weekly": 3,
+    "buses": 78
+   },
+   {
+    "day": 3,
+    "hour": 17,
+    "pantries": 2,
+    "pantries_weekly": 1,
+    "buses": 83
+   },
+   {
+    "day": 3,
+    "hour": 18,
+    "pantries": 4,
+    "pantries_weekly": 2,
+    "buses": 65
+   },
+   {
+    "day": 3,
+    "hour": 19,
+    "pantries": 4,
+    "pantries_weekly": 3,
+    "buses": 23
+   },
+   {
+    "day": 3,
+    "hour": 20,
+    "pantries": 2,
+    "pantries_weekly": 2,
+    "buses": 11
+   },
+   {
+    "day": 3,
+    "hour": 21,
+    "pantries": 0,
+    "pantries_weekly": 0,
+    "buses": 10
+   },
+   {
+    "day": 4,
+    "hour": 6,
+    "pantries": 0,
+    "pantries_weekly": 0,
+    "buses": 71
+   },
+   {
+    "day": 4,
+    "hour": 7,
+    "pantries": 0,
+    "pantries_weekly": 0,
+    "buses": 84
+   },
+   {
+    "day": 4,
+    "hour": 8,
+    "pantries": 6,
+    "pantries_weekly": 5,
+    "buses": 82
+   },
+   {
+    "day": 4,
+    "hour": 9,
+    "pantries": 14,
+    "pantries_weekly": 13,
+    "buses": 83
+   },
+   {
+    "day": 4,
+    "hour": 10,
+    "pantries": 21,
+    "pantries_weekly": 20,
+    "buses": 82
+   },
+   {
+    "day": 4,
+    "hour": 11,
+    "pantries": 20,
+    "pantries_weekly": 20,
+    "buses": 83
+   },
+   {
+    "day": 4,
+    "hour": 12,
+    "pantries": 21,
+    "pantries_weekly": 21,
+    "buses": 81
+   },
+   {
+    "day": 4,
+    "hour": 13,
+    "pantries": 20,
+    "pantries_weekly": 20,
+    "buses": 83
+   },
+   {
+    "day": 4,
+    "hour": 14,
+    "pantries": 17,
+    "pantries_weekly": 16,
+    "buses": 82
+   },
+   {
+    "day": 4,
+    "hour": 15,
+    "pantries": 9,
+    "pantries_weekly": 8,
+    "buses": 82
+   },
+   {
+    "day": 4,
+    "hour": 16,
+    "pantries": 5,
+    "pantries_weekly": 4,
+    "buses": 78
+   },
+   {
+    "day": 4,
+    "hour": 17,
+    "pantries": 5,
+    "pantries_weekly": 3,
+    "buses": 83
+   },
+   {
+    "day": 4,
+    "hour": 18,
+    "pantries": 3,
+    "pantries_weekly": 2,
+    "buses": 65
+   },
+   {
+    "day": 4,
+    "hour": 19,
+    "pantries": 1,
+    "pantries_weekly": 1,
+    "buses": 23
+   },
+   {
+    "day": 4,
+    "hour": 20,
+    "pantries": 0,
+    "pantries_weekly": 0,
+    "buses": 11
+   },
+   {
+    "day": 4,
+    "hour": 21,
+    "pantries": 0,
+    "pantries_weekly": 0,
+    "buses": 10
+   },
+   {
+    "day": 5,
+    "hour": 6,
+    "pantries": 0,
+    "pantries_weekly": 0,
+    "buses": 71
+   },
+   {
+    "day": 5,
+    "hour": 7,
+    "pantries": 0,
+    "pantries_weekly": 0,
+    "buses": 84
+   },
+   {
+    "day": 5,
+    "hour": 8,
+    "pantries": 6,
+    "pantries_weekly": 6,
+    "buses": 82
+   },
+   {
+    "day": 5,
+    "hour": 9,
+    "pantries": 14,
+    "pantries_weekly": 14,
+    "buses": 83
+   },
+   {
+    "day": 5,
+    "hour": 10,
+    "pantries": 20,
+    "pantries_weekly": 20,
+    "buses": 82
+   },
+   {
+    "day": 5,
+    "hour": 11,
+    "pantries": 22,
+    "pantries_weekly": 22,
+    "buses": 83
+   },
+   {
+    "day": 5,
+    "hour": 12,
+    "pantries": 22,
+    "pantries_weekly": 22,
+    "buses": 81
+   },
+   {
+    "day": 5,
+    "hour": 13,
+    "pantries": 20,
+    "pantries_weekly": 20,
+    "buses": 83
+   },
+   {
+    "day": 5,
+    "hour": 14,
+    "pantries": 15,
+    "pantries_weekly": 15,
+    "buses": 82
+   },
+   {
+    "day": 5,
+    "hour": 15,
+    "pantries": 8,
+    "pantries_weekly": 8,
+    "buses": 82
+   },
+   {
+    "day": 5,
+    "hour": 16,
+    "pantries": 4,
+    "pantries_weekly": 4,
+    "buses": 78
+   },
+   {
+    "day": 5,
+    "hour": 17,
+    "pantries": 2,
+    "pantries_weekly": 2,
+    "buses": 83
+   },
+   {
+    "day": 5,
+    "hour": 18,
+    "pantries": 0,
+    "pantries_weekly": 0,
+    "buses": 65
+   },
+   {
+    "day": 5,
+    "hour": 19,
+    "pantries": 0,
+    "pantries_weekly": 0,
+    "buses": 23
+   },
+   {
+    "day": 5,
+    "hour": 20,
+    "pantries": 0,
+    "pantries_weekly": 0,
+    "buses": 11
+   },
+   {
+    "day": 5,
+    "hour": 21,
+    "pantries": 0,
+    "pantries_weekly": 0,
+    "buses": 10
+   },
+   {
+    "day": 6,
+    "hour": 6,
+    "pantries": 0,
+    "pantries_weekly": 0,
+    "buses": 71
+   },
+   {
+    "day": 6,
+    "hour": 7,
+    "pantries": 0,
+    "pantries_weekly": 0,
+    "buses": 84
+   },
+   {
+    "day": 6,
+    "hour": 8,
+    "pantries": 2,
+    "pantries_weekly": 2,
+    "buses": 82
+   },
+   {
+    "day": 6,
+    "hour": 9,
+    "pantries": 5,
+    "pantries_weekly": 5,
+    "buses": 83
+   },
+   {
+    "day": 6,
+    "hour": 10,
+    "pantries": 10,
+    "pantries_weekly": 9,
+    "buses": 82
+   },
+   {
+    "day": 6,
+    "hour": 11,
+    "pantries": 10,
+    "pantries_weekly": 9,
+    "buses": 83
+   },
+   {
+    "day": 6,
+    "hour": 12,
+    "pantries": 9,
+    "pantries_weekly": 9,
+    "buses": 81
+   },
+   {
+    "day": 6,
+    "hour": 13,
+    "pantries": 7,
+    "pantries_weekly": 7,
+    "buses": 83
+   },
+   {
+    "day": 6,
+    "hour": 14,
+    "pantries": 5,
+    "pantries_weekly": 5,
+    "buses": 82
+   },
+   {
+    "day": 6,
+    "hour": 15,
+    "pantries": 2,
+    "pantries_weekly": 2,
+    "buses": 82
+   },
+   {
+    "day": 6,
+    "hour": 16,
+    "pantries": 2,
+    "pantries_weekly": 2,
+    "buses": 78
+   },
+   {
+    "day": 6,
+    "hour": 17,
+    "pantries": 2,
+    "pantries_weekly": 2,
+    "buses": 83
+   },
+   {
+    "day": 6,
+    "hour": 18,
+    "pantries": 2,
+    "pantries_weekly": 2,
+    "buses": 65
+   },
+   {
+    "day": 6,
+    "hour": 19,
+    "pantries": 2,
+    "pantries_weekly": 2,
+    "buses": 23
+   },
+   {
+    "day": 6,
+    "hour": 20,
+    "pantries": 1,
+    "pantries_weekly": 1,
+    "buses": 11
+   },
+   {
+    "day": 6,
+    "hour": 21,
+    "pantries": 1,
+    "pantries_weekly": 1,
+    "buses": 10
+   },
+   {
+    "day": 7,
+    "hour": 6,
+    "pantries": 0,
+    "pantries_weekly": 0,
+    "buses": 51
+   },
+   {
+    "day": 7,
+    "hour": 7,
+    "pantries": 0,
+    "pantries_weekly": 0,
+    "buses": 72
+   },
+   {
+    "day": 7,
+    "hour": 8,
+    "pantries": 0,
+    "pantries_weekly": 0,
+    "buses": 73
+   },
+   {
+    "day": 7,
+    "hour": 9,
+    "pantries": 5,
+    "pantries_weekly": 2,
+    "buses": 74
+   },
+   {
+    "day": 7,
+    "hour": 10,
+    "pantries": 9,
+    "pantries_weekly": 6,
+    "buses": 73
+   },
+   {
+    "day": 7,
+    "hour": 11,
+    "pantries": 5,
+    "pantries_weekly": 4,
+    "buses": 73
+   },
+   {
+    "day": 7,
+    "hour": 12,
+    "pantries": 2,
+    "pantries_weekly": 1,
+    "buses": 74
+   },
+   {
+    "day": 7,
+    "hour": 13,
+    "pantries": 0,
+    "pantries_weekly": 0,
+    "buses": 74
+   },
+   {
+    "day": 7,
+    "hour": 14,
+    "pantries": 2,
+    "pantries_weekly": 2,
+    "buses": 73
+   },
+   {
+    "day": 7,
+    "hour": 15,
+    "pantries": 2,
+    "pantries_weekly": 2,
+    "buses": 75
+   },
+   {
+    "day": 7,
+    "hour": 16,
+    "pantries": 0,
+    "pantries_weekly": 0,
+    "buses": 70
+   },
+   {
+    "day": 7,
+    "hour": 17,
+    "pantries": 0,
+    "pantries_weekly": 0,
+    "buses": 73
+   },
+   {
+    "day": 7,
+    "hour": 18,
+    "pantries": 0,
+    "pantries_weekly": 0,
+    "buses": 52
+   },
+   {
+    "day": 7,
+    "hour": 19,
+    "pantries": 0,
+    "pantries_weekly": 0,
+    "buses": 16
+   },
+   {
+    "day": 7,
+    "hour": 20,
+    "pantries": 0,
+    "pantries_weekly": 0,
+    "buses": 11
+   },
+   {
+    "day": 7,
+    "hour": 21,
+    "pantries": 0,
+    "pantries_weekly": 0,
+    "buses": 10
+   }
+  ]
+ },
+ "photos": {
+  "aero-stop-8005": {
+   "stop": "Peoria Ave & 38th St N",
+   "tract": "80.02",
+   "GEOID": "40143008002",
+   "high_need": true,
+   "poverty_rate": 0.26,
+   "share_weekday_day": 1.0,
+   "share_weekday_evening": 1.0,
+   "share_saturday": 0.908,
+   "credit": "G. Edward Johnson",
+   "license": "CC BY 4.0",
+   "source_url": "https://commons.wikimedia.org/wiki/File:Tulsa_Transit_Aero_bus_stop_8005_OK_2025-03-16_16-05-20_1.jpg"
+  },
+  "aero-peoria-11th": {
+   "stop": "Peoria Ave & 11th St",
+   "tract": "32",
+   "GEOID": "40143003200",
+   "high_need": false,
+   "poverty_rate": 0.049,
+   "share_weekday_day": 1.0,
+   "share_weekday_evening": 0.0,
+   "share_saturday": 0.0,
+   "credit": "G. Edward Johnson",
+   "license": "CC BY 4.0",
+   "source_url": "https://commons.wikimedia.org/wiki/File:Aero_bus_stop_7015_S_Peoria_Ave_and_11th_St_Tulsa_OK_2025-07-21_10-08-39.jpg"
+  }
+ },
+ "sunday_routes": [
+  "700"
+ ],
+ "special_hours": [
+  {
+   "name": "Catholic Charities / Tulsa",
+   "date": "2026-11-24",
+   "closed": false,
+   "start": "9:00 AM",
+   "end": "2:00 PM",
+   "note": "No evening hours"
+  },
+  {
+   "name": "Catholic Charities / Tulsa",
+   "date": "2026-11-25",
+   "closed": false,
+   "start": "9:00 AM",
+   "end": "12:00 PM",
+   "note": ""
+  },
+  {
+   "name": "Catholic Charities / Tulsa",
+   "date": "2026-11-26",
+   "closed": true,
+   "start": "",
+   "end": "",
+   "note": ""
+  },
+  {
+   "name": "Catholic Charities / Tulsa",
+   "date": "2026-11-27",
+   "closed": true,
+   "start": "",
+   "end": "",
+   "note": ""
+  },
+  {
+   "name": "Catholic Charities / Tulsa",
+   "date": "2026-11-28",
+   "closed": true,
+   "start": "",
+   "end": "",
+   "note": ""
+  },
+  {
+   "name": "Arms Around BA",
+   "date": "2026-11-20",
+   "closed": true,
+   "start": "",
+   "end": "",
+   "note": "Closed Thanksgiving Holiday 11/20/26-11/27/26"
+  }
+ ],
  "median_headway_min": {
   "weekday_day": 46.7,
   "weekday_evening": 60.0,

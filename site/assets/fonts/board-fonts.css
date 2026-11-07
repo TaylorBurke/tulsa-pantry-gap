@@ -1,0 +1,4 @@
+/* Public Sans (USWDS) and Permanent Marker, both SIL Open Font License 1.1. Latin subset, self-hosted. */
+@font-face{font-family:'Public Sans';font-style:normal;font-weight:100 900;font-display:swap;src:url(PublicSans-var.woff2) format('woff2')}
+@font-face{font-family:'Public Sans';font-style:italic;font-weight:400;font-display:swap;src:url(PublicSans-400i.woff2) format('woff2')}
+@font-face{font-family:'Permanent Marker';font-style:normal;font-weight:400;font-display:swap;src:url(PermanentMarker-400.woff2) format('woff2')}

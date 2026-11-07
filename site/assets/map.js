@@ -10,6 +10,8 @@
   const WIN = window.PANTRY_GAP.windows;      // labels, from build_site.py
   const RANK = window.PANTRY_GAP.ranking;     // top-10 GEOIDs per window
   const W = 900;
+  const ROOT = window.PANTRY_GAP.dataRoot || "";   // "../" for pages in a subfolder
+  const on = (sel, fn) => { const el = $(sel); if (el) el.onclick = fn; };
 
   // Layers. Bins are fixed so colors mean the same thing in every window.
   const LAYERS = {
@@ -44,16 +46,25 @@
   }
 
   Promise.all([
-    d3.json("data/tracts.geojson"), d3.json("data/pantries.geojson"),
-    d3.json("data/routes.geojson"), d3.json("data/places.json"),
+    d3.json(ROOT + "data/tracts.geojson"), d3.json(ROOT + "data/pantries.geojson"),
+    d3.json(ROOT + "data/routes.geojson"), d3.json(ROOT + "data/places.json"),
   ]).then(([tracts, pantries, routes, places]) => draw(tracts, pantries, routes, places))
     .catch((e) => { $("#map").textContent = "The map could not load. The tables below have every value."; console.error(e); });
 
   function draw(tracts, pantries, routes, places) {
-    const proj = d3.geoMercator().fitWidth(W, tracts);
+    // Optional: a fixed frame (mapAspect = height / width) with the county fitted
+    // inside it, instead of a frame as tall as the county.
+    const ASPECT = window.PANTRY_GAP.mapAspect;
+    let proj, H;
+    if (ASPECT) {
+      H = Math.round(W * ASPECT);
+      proj = d3.geoMercator().fitSize([W, H], tracts);
+    } else {
+      proj = d3.geoMercator().fitWidth(W, tracts);
+      const [[, y0], [, y1]] = d3.geoPath(proj).bounds(tracts);
+      H = Math.ceil(y1 - y0) + 4;
+    }
     const path = d3.geoPath(proj);
-    const [[, y0], [, y1]] = path.bounds(tracts);
-    const H = Math.ceil(y1 - y0) + 4;
     const svg = d3.select("#map").append("svg").attr("viewBox", `0 0 ${W} ${H}`)
       .attr("role", "img").attr("aria-labelledby", "map-title map-sub");
     const g = svg.append("g");
@@ -76,9 +87,16 @@
     const zoom = d3.zoom().scaleExtent([1, 10]).translateExtent([[0, 0], [W, H]])
       .on("zoom", (ev) => { k = ev.transform.k; g.attr("transform", ev.transform); sizeMarks(); });
     svg.call(zoom).on("dblclick.zoom", null);
-    $("#zin").onclick = () => svg.transition().call(zoom.scaleBy, 1.6);
-    $("#zout").onclick = () => svg.transition().call(zoom.scaleBy, 1 / 1.6);
-    $("#zreset").onclick = () => svg.transition().call(zoom.transform, d3.zoomIdentity);
+    // Optional: open zoomed onto the high-need tracts, where the gaps are; Reset shows the county.
+    if (window.PANTRY_GAP.focusHighNeed) {
+      const hn = { type: "FeatureCollection", features: tracts.features.filter((f) => f.properties.high_need) };
+      const [[x0, y0], [x1, y1]] = path.bounds(hn);
+      const kk = Math.min(4, 0.92 / Math.max((x1 - x0) / W, (y1 - y0) / H));
+      svg.call(zoom.transform, d3.zoomIdentity.translate(W / 2 - kk * (x0 + x1) / 2, H / 2 - kk * (y0 + y1) / 2).scale(kk));
+    }
+    on("#zin", () => svg.transition().call(zoom.scaleBy, 1.6));
+    on("#zout", () => svg.transition().call(zoom.scaleBy, 1 / 1.6));
+    on("#zreset", () => svg.transition().call(zoom.transform, d3.zoomIdentity));
 
     function sizeMarks() {
       const r = 4.2 / Math.sqrt(k);
@@ -105,11 +123,13 @@
         .text((d) => top.indexOf(d.properties.GEOID) + 1);
       sizeMarks();
       legend();
-      $("#map-sub").textContent = `${WIN[state.win].label}. ${L.title}. ` +
+      if ($("#map-sub")) $("#map-sub").textContent = `${WIN[state.win].label}. ${L.title}. ` +
         (state.wait === "planned" ? "Riders time their trip to the bus schedule." : "Riders walk up without checking the schedule.");
       document.querySelectorAll("[data-win-panel]").forEach((el) => { el.hidden = el.dataset.winPanel !== state.win; });
       if (state.sel) info(state.sel); else infoDefault();
       table();
+      // Let the rest of the page follow the same input (one switch drives everything).
+      document.dispatchEvent(new CustomEvent("pantrygap:render", { detail: { ...state, sel: undefined } }));
     }
 
     function legend() {
@@ -118,8 +138,8 @@
       const ramp = steps.map((s, i) => `<span><i style="background:var(--${s})${s === "none" ? ";box-shadow:inset 0 0 0 1px var(--axis)" : ""}"></i>${L.labels[i] || "&nbsp;"}</span>`).join("");
       $("#legend").innerHTML = `<div class="legend-title">${L.title}</div><div class="ramp">${ramp}</div>` +
         (state.layer === "gap" ? `<span class="item"><i class="k-out"></i>Not high need (outline only)</span>` : "") +
-        `<span class="item"><i class="k-dot" style="background:var(--s2)"></i>Pantry open (${WIN[state.win].short})</span>` +
-        `<span class="item"><i class="k-dot" style="box-shadow:inset 0 0 0 1.5px var(--muted)"></i>Not open then</span>` +
+        `<span class="item"><i class="k-dot open"></i>Pantry open (${WIN[state.win].short})</span>` +
+        `<span class="item"><i class="k-dot closed"></i>Not open then</span>` +
         `<span class="item"><i class="k-line"></i>Bus route</span>` +
         `<span class="item"><i class="k-ring"></i>Top 10 gap tracts (numbered)</span>`;
     }
@@ -159,6 +179,7 @@
     svg.on("click", (ev) => { if (ev.target.tagName === "svg") { state.sel = null; render(); } });
 
     function table() {
+      if (!$("#tract-table")) return;
       const key = `poor_no_access_${state.win}_${state.wait}`;
       const rows = tracts.features.map((f) => f.properties).sort((a, b) => b[key] - a[key]);
       $("#tract-table tbody").innerHTML = rows.map((p) =>
@@ -175,21 +196,30 @@
       if (ev.type === "keydown" && ev.key !== "Enter" && ev.key !== " ") return;
       ev.preventDefault();
       select({ kind: "tract", d: byId.get(tr.dataset.geoid) });
-      document.getElementById("map-fig").scrollIntoView({
+      (document.getElementById("map-fig") || document.getElementById("map")).scrollIntoView({
         behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "start" });
     }
     document.addEventListener("click", pick);
     document.addEventListener("keydown", pick);
 
-    document.querySelectorAll(".seg[data-ctl]").forEach((seg) => {
-      seg.addEventListener("click", (ev) => {
-        const b = ev.target.closest("button");
+    // Any element with data-ctl is a control group; a page may repeat a group
+    // (the board shows the window switch twice), so every copy stays in sync.
+    function sync() {
+      document.querySelectorAll("[data-ctl]").forEach((grp) => grp.querySelectorAll("button[data-v]")
+        .forEach((x) => x.setAttribute("aria-pressed", String(x.dataset.v === state[grp.dataset.ctl]))));
+    }
+    document.querySelectorAll("[data-ctl]").forEach((grp) => {
+      grp.addEventListener("click", (ev) => {
+        const b = ev.target.closest("button[data-v]");
         if (!b) return;
-        state[seg.dataset.ctl] = b.dataset.v;
-        seg.querySelectorAll("button").forEach((x) => x.setAttribute("aria-pressed", String(x === b)));
+        state[grp.dataset.ctl] = b.dataset.v;
+        sync();
         render();
       });
     });
+    const initWin = document.querySelector('[data-ctl="win"] button[aria-pressed="true"]');
+    if (initWin) state.win = initWin.dataset.v;
+    sync();
     window.__rerender = render;
     render();
   }
