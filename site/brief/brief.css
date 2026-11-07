@@ -47,7 +47,6 @@ section { margin-bottom: 16px; }
 .tile.hot { border-top-color: var(--ink); }
 .tl { font-size: 8pt; font-weight: 700; text-transform: uppercase; letter-spacing: .05em; color: var(--muted); }
 .tv { font-size: 28pt; font-weight: 800; line-height: 1.05; font-variant-numeric: tabular-nums; }
-.tile.hot .tv { background: linear-gradient(transparent 58%, var(--hl) 58%, var(--hl) 92%, transparent 92%); align-self: flex-start; }
 .ts { font-size: 8.6pt; color: var(--ink-2); }
 .tn { font-size: 7.8pt; color: var(--muted); margin-top: 3px; font-variant-numeric: tabular-nums; }
 
