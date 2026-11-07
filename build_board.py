@@ -114,7 +114,7 @@ page = f"""<!doctype html>
 
 <section class="first">
 <article class="sheet notice" style="--r:-0.8deg"><span class="tape" aria-hidden="true"></span>
-<h1>After 5pm and on Saturdays, about half of Tulsa's highest-need neighborhoods can reach an open pantry without a car.</h1>
+<h1>After 5pm and on Saturdays, about half of Tulsa's highest-need neighborhoods can't reach an open pantry without a car.</h1>
 <p class="dek">On a weekday, <mark>{pct(DAY)}</mark> of people in the county's {C["high_need_tracts"]} highest-need tracts can walk or ride the bus to an open food pantry within {CFG["budget_min"]} minutes. After 5pm it's <mark>{pct(EVE)}</mark>. On a Saturday, <mark>{pct(SAT)}</mark>.</p>
 <p class="byline">By <a href="{AUTHOR_URL}">{AUTHOR}</a>, from public data. Not a product of the Food Bank of Eastern Oklahoma.</p>
 </article>
