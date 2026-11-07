@@ -2,6 +2,8 @@
 
 **Tulsa Pantry Gap Map.** Where in Tulsa County food need is high but no food pantry is open and reachable without a car, on weekday daytimes, weekday evenings (after 5pm) and Saturdays.
 
+By [Taylor Burke](https://www.taylorburke.me/). Live at **https://tulsa-pantry-gap.pages.dev/**.
+
 A personal project built only on public data. It is not a product of, and is not endorsed by, the Food Bank of Eastern Oklahoma; it uses no internal Food Bank data.
 
 ## What the data says (build of 2026-11-06)
@@ -86,7 +88,11 @@ Python deps are locked with uv (`pyproject.toml`, `uv.lock`); r5py is in the opt
 
 ## Hosting
 
-Not deployed. The plan is Cloudflare Pages (`site/` is the whole static site) once approved.
+Cloudflare Pages project `tulsa-pantry-gap`; `site/` is the whole static site. After `make`:
+
+```sh
+npx wrangler@4 pages deploy site --project-name tulsa-pantry-gap --branch main --commit-dirty=true
+```
 
 ## License
 
