@@ -3,7 +3,7 @@
 #   make refresh   re-download every source, then rebuild
 #   make validate  optional: R5 router cross-check (needs Java 21+, ~170 MB OSM extract)
 #   make serve     preview at http://localhost:8765
-#   make smoke     headless browser test of the built site (needs `make serve` running)
+#   make smoke     headless browser test of the classic page (needs `make serve` running)
 PY := uv run --frozen python -W ignore
 A := cd analysis &&
 
@@ -38,7 +38,7 @@ serve:
 	cd site && python3 -m http.server 8765
 
 smoke:
-	node tools/smoke.mjs http://localhost:8765/ /tmp
+	node tools/smoke.mjs http://localhost:8765/classic/ /tmp
 
 clean:
 	rm -f data/derived/*.parquet data/derived/*.npz data/derived/tracts_access.csv site/data/*.geojson site/data/places.json

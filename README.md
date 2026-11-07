@@ -55,7 +55,8 @@ analysis/gap.py           labels, gap flags, ranking       -> data/derived/tract
 analysis/siting.py        mobile pantry screen             -> data/derived/siting.json
 analysis/checks.py        independent checks (exit 1 on failure) -> data/derived/checks.json
 analysis/story.py         every quoted number + map layers -> data/derived/story.json, site/data/
-build_site.py             story.json -> site/index.html, site/sources.html (asserts headline claims)
+build_board.py            story.json -> site/index.html (bulletin-board edition, the default page)
+build_site.py             story.json -> site/classic/index.html, site/sources.html (asserts headline claims)
 analysis/validate_r5.py   optional R5 cross-check          -> data/derived/validate_r5.json
 ```
 
@@ -64,7 +65,7 @@ make            # fetch what's missing, analysis, checks, site (~30 s once raw f
 make refresh    # re-download every source first
 make validate   # optional R5 check (Java 21+, ~170 MB OSM download); validate_r5.json is committed
 make serve      # http://localhost:8765
-make smoke      # headless Chrome test of the built site (with `make serve` running)
+make smoke      # headless Chrome test of the classic page (with `make serve` running)
 ```
 
 Python deps are locked with uv (`pyproject.toml`, `uv.lock`); r5py is in the optional `validate` group. Raw downloads are git-ignored; each source folder has a `manifest.json` (url, sha256, fetch time; the ACS subset also records the full national file's hash).

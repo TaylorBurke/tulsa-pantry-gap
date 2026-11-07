@@ -1,4 +1,4 @@
-"""Build site/index.html and site/sources.html from data/derived/story.json.
+"""Build site/classic/index.html (the article edition) and site/sources.html from data/derived/story.json.
 
 Every number in the prose is read from story.json (written by analysis/story.py),
 never typed by hand. Headline claims are asserted, so a data refresh that breaks
@@ -47,7 +47,7 @@ def frac_words(v):
 
 
 def src(*ids):
-    links = ", ".join(f'<a href="sources.html#{i}">{e(REG[i]["name"].split(" (")[0])}</a>' for i in ids)
+    links = ", ".join(f'<a href="../sources.html#{i}">{e(REG[i]["name"].split(" (")[0])}</a>' for i in ids)
     return f'<p class="src">Sources: {links}.</p>'
 
 
@@ -191,10 +191,10 @@ page = f"""<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Tulsa Pantry Gap Map</title>
 <meta name="description" content="Where food need is high in Tulsa County but no pantry is open and reachable without a car, on weekdays, weekday evenings and Saturdays.">
-<link rel="icon" href="data:,"><link rel="stylesheet" href="assets/style.css">
+<link rel="icon" href="data:,"><link rel="stylesheet" href="../assets/style.css">
 </head><body>
 <nav class="nav"><div class="nav-in"><a class="nav-home" href="#top">Pantry Gap Map</a>
-<div class="nav-links"><a href="#map-sec">Map</a><a href="#findings">Findings</a><a href="#gaps">Top gaps</a><a href="#mobile">Mobile pantry</a><a href="#method">Method</a><a href="sources.html">Sources</a></div>
+<div class="nav-links"><a href="#map-sec">Map</a><a href="#findings">Findings</a><a href="#gaps">Top gaps</a><a href="#mobile">Mobile pantry</a><a href="#method">Method</a><a href="../sources.html">Sources</a></div>
 <button id="theme" aria-label="Toggle dark mode" title="Toggle dark mode">◐</button></div></nav>
 <div class="wrap" id="top">
 <header class="mast">
@@ -289,16 +289,17 @@ page = f"""<!doctype html>
 
 <footer>
 <p>By <a href="{AUTHOR_URL}">{AUTHOR}</a>. Built {e(S["built"])} from public data. Code, method and derived data: <a href="{REPO_URL}">{REPO_URL.removeprefix("https://")}</a>; everything rebuilds from the raw downloads with <code>make</code>. Text and derived data CC BY 4.0, code MIT. Not affiliated with the Food Bank of Eastern Oklahoma or MetroLink Tulsa. Pantry information changes: call a pantry before going, or dial 2-1-1.</p>
-<p><a href="sources.html">All sources, licenses and caveats</a></p>
+<p><a href="../sources.html">All sources, licenses and caveats</a></p>
 </footer>
 </div>
-<script>window.PANTRY_GAP = {{"windows": {window_js}, "ranking": {rank_js}}};</script>
-<script src="assets/vendor/d3.min.js"></script>
-<script src="assets/map.js"></script>
-<script src="assets/ui.js"></script>
+<script>window.PANTRY_GAP = {{"dataRoot": "../", "windows": {window_js}, "ranking": {rank_js}}};</script>
+<script src="../assets/vendor/d3.min.js"></script>
+<script src="../assets/map.js"></script>
+<script src="../assets/ui.js"></script>
 </body></html>
 """
-(ROOT / "site" / "index.html").write_text(page)
+(ROOT / "site" / "classic").mkdir(parents=True, exist_ok=True)
+(ROOT / "site" / "classic" / "index.html").write_text(page)
 
 
 # ---- sources page ------------------------------------------------------------------------------
@@ -322,4 +323,4 @@ for sid, s in REG.items():
 <p class="dek">Every number on the map comes from one of these public sources. Each lists what it measures and where it falls short.</p></header>
 <main class="srcs">{''.join(cards)}</main><footer><a href="index.html">Back to the map</a></footer></div>
 <script src="assets/ui.js"></script></body></html>""")
-print(f"wrote site/index.html ({len(page) / 1e3:.0f} kB) and site/sources.html ({len(REG)} sources)")
+print(f"wrote site/classic/index.html ({len(page) / 1e3:.0f} kB) and site/sources.html ({len(REG)} sources)")

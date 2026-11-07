@@ -1,4 +1,4 @@
-"""Build site/board/index.html: the bulletin-board version of the Pantry Gap Map.
+"""Build site/index.html: the bulletin-board edition (the default page) of the Pantry Gap Map.
 
 The page is the board on a pantry's door: a typed notice, three hours sheets that
 are the time-window switch, the live map on a pinned sheet, every county pantry's
@@ -10,8 +10,7 @@ from sitekit import (S, W, ORDER, P, CFG, C, PT, RANK, OPEN, POOR_HN, DAY, EVE, 
                      SITING, PHOTOS, AUTHOR, AUTHOR_URL, REPO_URL, ROOT, e, pct, n, about, half_words,
                      short_label, window_js, rank_js, pantry_sheets, checks_items, caveats_items, src_links)
 
-OUT = ROOT / "site" / "board"
-OUT.mkdir(parents=True, exist_ok=True)
+OUT = ROOT / "site"
 
 SHEET = {
     "weekday_day": ("Weekdays", "Mon–Fri, 8am–5pm"),
@@ -105,8 +104,8 @@ page = f"""<!doctype html>
 <title>Tulsa Pantry Gap Map</title>
 <meta name="description" content="When Tulsa's food pantries are open, and who can reach one without a car: weekdays, weekday evenings and Saturdays.">
 <link rel="icon" href="data:,">
-<link rel="preload" href="../assets/fonts/PublicSans-var.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="../assets/fonts/board-fonts.css"><link rel="stylesheet" href="../assets/board.css">
+<link rel="preload" href="assets/fonts/PublicSans-var.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/fonts/board-fonts.css"><link rel="stylesheet" href="assets/board.css">
 </head><body>
 <header class="strip"><a class="strip-title" href="#top">Tulsa Pantry Gap Map</a>
 <nav aria-label="Sections"><a href="#map-fig">Map</a><a href="#wall">Every pantry</a><a href="#gaps">Gaps</a><a href="#mobile">Mobile</a><a href="#packet">Method</a></nav>
@@ -134,7 +133,7 @@ page = f"""<!doctype html>
 <div class="zoom"><button id="zin" aria-label="Zoom in">+</button><button id="zout" aria-label="Zoom out">−</button><button id="zreset" aria-label="Reset zoom">Reset</button></div></div>
 <div class="legend" id="legend"></div></div>
 <div class="map-side"><aside class="sticky" id="info" aria-live="polite"></aside>
-<p class="src">Sources: {src_links("../", "acs", "fbeo_finder", "gtfs", "tiger")}.</p>
+<p class="src">Sources: {src_links("", "acs", "fbeo_finder", "gtfs", "tiger")}.</p>
 <details class="table-view"><summary>Every tract as a table (<span id="tract-table-win"></span>)</summary>
 <div class="table-scroll"><table class="ruled" id="tract-table"><thead><tr><th>Where</th><th class="num">Poverty</th><th class="num">No car</th><th class="num">SNAP</th><th class="num">Can reach</th><th class="num">People in poverty with none in reach</th></tr></thead><tbody></tbody></table></div></details></div>
 </figure>
@@ -150,7 +149,7 @@ page = f"""<!doctype html>
 <p class="ps">P.S. These numbers assume riders check the schedule. Someone who just walks to the stop waits half the time between buses; then only {pct(WALK["saturday"]["share_high_need"])} of high-need residents reach an open pantry on a Saturday.</p>
 </article>
 <figure class="print" style="--r:2.2deg"><span class="tape" aria-hidden="true"></span>
-<img src="../assets/photos/aero-stop-8005.jpg" alt="An AERO rapid bus stop on Peoria Avenue at 38th Street North in Tulsa: a tall green AERO sign, a shelter and a bike rack beside a wide road." width="1000" height="667" loading="lazy">
+<img src="assets/photos/aero-stop-8005.jpg" alt="An AERO rapid bus stop on Peoria Avenue at 38th Street North in Tulsa: a tall green AERO sign, a shelter and a bike rack beside a wide road." width="1000" height="667" loading="lazy">
 <figcaption><span class="marker">{e(ph38["stop"])}</span> On the AERO, the one route that runs on Sundays. {pct(ph38["share_saturday"])} of the tract around it can reach a pantry on a Saturday. <small>Photo: {e(ph38["credit"])}, <a href="{e(ph38["source_url"])}">{e(ph38["license"])}</a></small></figcaption>
 </figure>
 </section>
@@ -189,7 +188,7 @@ page = f"""<!doctype html>
 <div><h3>Checked</h3><ul class="checks">{checks}</ul></div>
 <div>
 <h3>What could be wrong</h3><ul class="caveats">{caveats}</ul>
-<p class="fine">All sources, licenses and caveats: <a href="../sources.html">sources page</a>. Code and data: <a href="{REPO_URL}">{REPO_URL.removeprefix("https://")}</a>.</p>
+<p class="fine">All sources, licenses and caveats: <a href="sources.html">sources page</a>. Code and data: <a href="{REPO_URL}">{REPO_URL.removeprefix("https://")}</a>. The same story as a plain article: <a href="classic/">classic edition</a>.</p>
 </div>
 </div>
 </article>
@@ -201,11 +200,11 @@ page = f"""<!doctype html>
 <p class="foot">By <a href="{AUTHOR_URL}">{AUTHOR}</a>. Built {e(S["built"])} from public data. Pantry hours change, so call before going, or dial 2-1-1. Not affiliated with the Food Bank of Eastern Oklahoma or MetroLink Tulsa. Photo by {e(ph38["credit"])}, {e(ph38["license"])}. Text and data CC BY 4.0, code MIT.</p>
 </section>
 </main>
-<script>window.PANTRY_GAP = {{"dataRoot": "../", "mapAspect": 0.78, "focusHighNeed": true, "windows": {window_js()}, "ranking": {rank_js()}}};</script>
-<script src="../assets/vendor/d3.min.js"></script>
-<script src="../assets/map.js"></script>
-<script src="../assets/board.js"></script>
+<script>window.PANTRY_GAP = {{"mapAspect": 0.78, "focusHighNeed": true, "windows": {window_js()}, "ranking": {rank_js()}}};</script>
+<script src="assets/vendor/d3.min.js"></script>
+<script src="assets/map.js"></script>
+<script src="assets/board.js"></script>
 </body></html>
 """
 (OUT / "index.html").write_text(page)
-print(f"wrote site/board/index.html ({len(page) / 1e3:.0f} kB)")
+print(f"wrote site/index.html ({len(page) / 1e3:.0f} kB)")
