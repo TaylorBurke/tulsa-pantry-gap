@@ -168,7 +168,9 @@ page = f"""<!doctype html>
 <div class="label-strip"><h2 id="wall-h">Every county pantry's posted hours</h2>
 <p>As listed in the public Food Finder, with what the sheet doesn't say written on in marker. Pantries open in the window you picked come to the front.</p>
 <p class="wall-count" aria-live="polite" id="wall-count"></p></div>
-<ul class="wall" id="wall-list">{wall()}</ul>
+<button class="wall-toggle" id="wall-toggle" type="button" aria-expanded="false" aria-controls="wall-list" style="--r:-0.8deg">
+<span class="wt-label">Show all {len(pantry_sheets())} pantries</span><span class="wt-chev" aria-hidden="true"></span></button>
+<ul class="wall" id="wall-list" hidden>{wall()}</ul>
 </section>
 
 <section class="clip-sec" id="gaps" aria-labelledby="gaps-h">
@@ -204,9 +206,7 @@ page = f"""<!doctype html>
 </article>
 </section>
 
-<section class="close" aria-label="Pick a time again">
-<p class="close-line">Pick a time. The map, the sheets and the gap list all change with it.</p>
-{window_sheets("Bottom")}
+<section class="close" aria-label="About this page">
 {brief_note("inline", -1.4)}
 <p class="foot">By <a href="{AUTHOR_URL}">{AUTHOR}</a>. Built {e(S["built"])} from public data. Pantry hours change, so call before going, or dial 2-1-1. Not affiliated with the Food Bank of Eastern Oklahoma or MetroLink Tulsa. Photo by {e(ph38["credit"])}, {e(ph38["license"])}. Text and data CC BY 4.0, code MIT.</p>
 </section>

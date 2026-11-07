@@ -50,8 +50,17 @@
     if (ev.detail.win !== lastWin) { arrange(ev.detail.win); lastWin = ev.detail.win; }
   });
 
-  // The switch at the bottom of the page brings the reader back up to the map.
-  document.querySelectorAll('.close [data-ctl="win"] button').forEach((b) => b.addEventListener("click", () => {
-    document.getElementById("map-fig").scrollIntoView({ behavior: still() ? "auto" : "smooth", block: "start" });
-  }));
+  // The wall starts collapsed; the button (or a link to #wall) opens it.
+  const toggle = document.getElementById("wall-toggle");
+  const total = cards.length;
+  function setWall(open) {
+    if (!toggle || !list) return;
+    list.hidden = !open;
+    toggle.setAttribute("aria-expanded", String(open));
+    toggle.querySelector(".wt-label").textContent = open ? "Hide the list" : `Show all ${total} pantries`;
+  }
+  if (toggle) toggle.addEventListener("click", () => setWall(list.hidden));
+  const openFromHash = () => { if (location.hash === "#wall") setWall(true); };
+  document.querySelectorAll('a[href="#wall"]').forEach((a) => a.addEventListener("click", () => setWall(true)));
+  openFromHash();
 })();

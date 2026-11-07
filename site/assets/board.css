@@ -211,6 +211,14 @@ table.ruled tr[data-geoid]:hover td, table.ruled tr[data-geoid]:focus-visible td
   letter-spacing: .02em; padding: 6px 16px 7px; margin: 0 0 14px; transform: rotate(-1deg); box-shadow: 0 2px 4px rgba(0,0,0,.25); }
 .label-strip p { margin: 0 0 6px; font-size: 16px; }
 .wall-count { font-weight: 800; }
+.wall-toggle { display: inline-flex; align-items: center; gap: 10px; border: 0; cursor: pointer; background: var(--paper); color: var(--ink);
+  box-shadow: var(--shadow); transform: rotate(var(--r, -1deg)); padding: 12px 18px; font-weight: 800; font-size: 16px; margin: 0 0 28px;
+  transition: transform .15s ease, box-shadow .15s ease; }
+.wall-toggle:hover { transform: rotate(0deg) translateY(-2px); box-shadow: var(--shadow-up); }
+.wt-chev { width: 9px; height: 9px; border-right: 2.5px solid currentColor; border-bottom: 2.5px solid currentColor; transform: rotate(45deg) translateY(-2px); }
+.wall-toggle[aria-expanded="true"] .wt-chev { transform: rotate(-135deg) translateY(-2px); }
+@media (prefers-reduced-motion: reduce) { .wall-toggle { transition: none; } }
+.wall[hidden] { display: none; }
 .wall { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(214px, 1fr)); gap: 26px 22px; align-items: start; }
 .card { padding: 26px 16px 14px; transition: box-shadow .25s ease-out; }
 .card::before { content: ""; position: absolute; top: -11px; left: 50%; width: 70px; height: 22px; margin-left: -35px; background: var(--tape); transform: rotate(2deg); }
@@ -268,7 +276,6 @@ table.ruled tr[data-geoid]:hover td, table.ruled tr[data-geoid]:focus-visible td
 
 /* close */
 .close { padding: 96px 0 0; max-width: 820px; margin: 0 auto; }
-.close-line { color: var(--board-ink); font-weight: 800; font-size: clamp(22px, 2.4vw, 30px); line-height: 1.2; margin: 0 0 28px; }
 .foot { color: var(--board-ink); font-size: 14px; margin: 40px 0 0; line-height: 1.6; }
 
 @media (max-width: 1080px) {
