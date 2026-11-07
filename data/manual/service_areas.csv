@@ -1,0 +1,13 @@
+location_id,location_name,rule,areas,modeled,source_text
+14370,Broken Arrow Neighbors,place,Broken Arrow;Coweta,1,"serviceAreas: CITY: Broken Arrow, Coweta / 'Must live in Broken Arrow or Coweta'"
+14633,Catholic Charities / St. Anne,place,Broken Arrow;Coweta,1,"serviceAreas: CITY: Broken Arrow and Coweta Residents"
+14425,Arms Around BA,place,Broken Arrow;Bixby;Coweta,1,"qualifications: 'you must be a resident of Broken Arrow, Bixby or Coweta'"
+14444,Owasso Community Resources,school_district,Owasso Public Schools;Collinsville Public Schools;Sperry Public Schools,1,"qualifications: 'living in the Owasso, Collinsville, and Sperry school districts' (also an income limit, not modeled)"
+14666,The Mission Center,place,Claremore;Collinsville;Oologah;Owasso;Skiatook;Sperry;Talala;Turley,1,"serviceAreas: CITY: Claremore west of the Verdigris River, Collinsville, Oologah, Owasso, Skiatook, Sperry, Talala, Turley"
+14510,First Baptist Church Sapulpa,place,Sapulpa;Kiefer,1,"serviceAreas: CITY: Sapulpa and Kiefer Residents"
+14538,Caring Community Friends,county,40037,1,"serviceAreas: COUNTY: Eastern Creek County (no Tulsa County origin is eligible)"
+14632,Jenks Community Food Bank,school_district,Jenks Public Schools,1,"aboutUs: 'Jenks Public School District'; proof of residency required"
+14384,COSMO CENTER (Church of Saint Mary Outreach),zip,74105;74135;74136,1,"serviceAreas: ZIP CODE: 74105, 74135, 74136"
+16374,Memorial Drive Church of Christ Food Pantry,zip,74112;74114;74115;74116;74128;74129,1,"aboutUs: 'We serve the following zip codes 74112, 74114, 74115, 74116, 74128, 74129'"
+14421,South Peoria Neighborhood Connection Foundation,neighborhood,Riverwood,0,"serviceAreas: TOWNSHIP/NEIGHBORHOOD: Riverwood (no public boundary file; treated as open to all)"
+14485,Bixby Community Outreach Center,unspecified,,0,"qualifications: 'Must live in our service area to access our full pantry. Out of service area can shop our USDA/Emergency food pantry only.' (treated as open to all)"

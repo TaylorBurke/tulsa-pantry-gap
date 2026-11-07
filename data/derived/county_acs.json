@@ -1,0 +1,22 @@
+{
+ "pop":680794.0,
+ "pop_moe":null,
+ "pov_universe":668954.0,
+ "poor":98435.0,
+ "poor_moe":3131.0,
+ "poverty_rate":0.1471476365,
+ "poverty_rate_moe":0.004679436,
+ "below_200":225783.0,
+ "below_200_rate":0.337516481,
+ "below_200_rate_moe":0.0075327885,
+ "households":272422.0,
+ "households_moe":759.0,
+ "no_vehicle_hh":17116.0,
+ "no_vehicle_hh_moe":723.3823332098,
+ "no_vehicle_rate":0.0628289933,
+ "no_vehicle_rate_moe":0.002649598,
+ "snap_hh":34993.0,
+ "snap_hh_moe":1000.0,
+ "snap_rate":0.1284514467,
+ "snap_rate_moe":0.0036532881
+}

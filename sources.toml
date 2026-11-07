@@ -1,0 +1,64 @@
+# Source registry: every data source the project uses. Each fetch script writes to
+# data/raw/<id>/ with a manifest.json; build_site.py renders site/sources.html from
+# this file and those manifests.
+# Fields: name, publisher, url, license, measures, caveat, access, redistribute
+
+[acs]
+name = "American Community Survey 2020-2024 5-year estimates (table-based summary file)"
+publisher = "U.S. Census Bureau"
+url = "https://www2.census.gov/programs-surveys/acs/summary_file/2024/table-based-SF/"
+license = "Public domain (U.S. government work)"
+measures = "Tract population (B01003), poverty status (B17001), income-to-poverty ratio (C17002), vehicles available by tenure (B25044), SNAP receipt (B22003), each with 90% margins of error"
+caveat = "Sample survey pooled over five years: tract estimates carry wide margins of error, especially for small shares. The site shows the margin next to every rate and flags tracts where a need measure's coefficient of variation is above 40%. The Census API now requires a key, so the pipeline reads the keyless summary-file tables and keeps only Tulsa County rows (the manifest records the full national file's hash)."
+access = "pipe-delimited text"
+redistribute = true
+
+[tiger]
+name = "TIGER/Line and cartographic boundary files (tracts, 2020 blocks, places, ZCTAs, school districts, roads)"
+publisher = "U.S. Census Bureau"
+url = "https://www.census.gov/geographies/mapping-files.html"
+license = "Public domain (U.S. government work)"
+measures = "Tract outlines (2024 cartographic boundary, 2020 tract definitions); 2020 census blocks with population, used as population-weighted trip origins; city, ZIP-area and school-district outlines for pantry service areas; road names for tract labels"
+caveat = "Block populations are from the 2020 census, so the within-tract population pattern is six years old. ZIP code tabulation areas approximate postal ZIP codes. Tract labels name the nearest mile-grid arterials to where the tract's people live; they are landmarks, not boundaries."
+access = "shapefile"
+redistribute = true
+
+[usda_sram]
+name = "Food Access Research Atlas: 2025 SNAP-authorized Retailer Access Map (SRAM)"
+publisher = "USDA Economic Research Service"
+url = "https://www.ers.usda.gov/data-products/food-access-research-atlas/download-the-data"
+license = "Public domain (U.S. government work)"
+measures = "Low-income and low-access tract flags (here: over 1/2 mile from any SNAP-authorized retailer in urban areas), shown in tract details; tract poverty, zero-vehicle and SNAP counts used as a cross-check"
+caveat = "Released July 2026, SRAM replaces the 2019 Large Retailer Access Map (formerly the Food Access Research Atlas). It counts every SNAP-authorized retailer, dollar and convenience stores included, so almost no Tulsa County tract is low-access by its 1-mile or vehicle definitions. It measures distance to a store, not the ability to pay or access to a pantry."
+access = "csv in zip"
+redistribute = true
+
+[gtfs]
+name = "MetroLink Tulsa (MTTA) GTFS schedule feed"
+publisher = "Metropolitan Tulsa Transit Authority"
+url = "https://www.metrolinkok.org/open-data/"
+license = "Public feed; MTTA asks users to keep data current and not to use its logo or maps without permission (none are used)"
+measures = "Bus stops, routes, trip schedules and service days (weekday, Saturday, Sunday) used for travel times and headways"
+caveat = "Scheduled service only: real buses run late, miss transfers, and change three times a year (April, August, November). The feed used here is valid for the date range shown on the site."
+access = "GTFS zip"
+redistribute = false
+
+[fbeo_finder]
+name = "Food Finder (public pantry locator on okfoodbank.org)"
+publisher = "Food Bank of Eastern Oklahoma, via the AccessFood (Vivery) map widget"
+url = "https://okfoodbank.org/pantry-finder/"
+license = "Public listing; cited, raw responses not redistributed. The site shows each pantry's public name, address and listed hours only."
+measures = "Partner pantry locations, programs (pantry, school pantry, senior CSFP, meal program), regular weekly hours including 'nth weekday of the month' rules, and stated service areas"
+caveat = "Hours are self-reported by pantries and can be stale; holiday closures and one-off changes are not modeled. Some general pantries list no hours. The public map shows only part of the network the Food Bank describes (it cites 333 pantries and feeding programs in Tulsa County, many of them school, senior or other specialized programs), and pantries outside its network are not included. This project uses only the public listing; no internal Food Bank data."
+access = "public JSON (the requests the widget makes)"
+redistribute = false
+
+[osm]
+name = "OpenStreetMap extract for Oklahoma (validation only)"
+publisher = "OpenStreetMap contributors, via Geofabrik"
+url = "https://download.geofabrik.de/north-america/us/oklahoma.html"
+license = "ODbL 1.0"
+measures = "Street and sidewalk network used by the R5 router to check the travel-time approximation on a sample"
+caveat = "Used only in the optional validation step (make validate); no OSM-derived data is published."
+access = "osm.pbf"
+redistribute = false

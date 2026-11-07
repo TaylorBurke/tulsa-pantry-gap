@@ -1,0 +1,7 @@
+window,wait,median_headway_min,served_stops,median_stops_within_budget
+weekday_day,planned,46.7,1184,64.0
+weekday_day,walk_up,46.7,934,20.0
+weekday_evening,planned,60.0,1189,61.0
+weekday_evening,walk_up,60.0,246,21.0
+saturday,planned,50.0,1184,62.0
+saturday,walk_up,50.0,773,15.0

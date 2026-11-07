@@ -1,0 +1,47 @@
+{
+ "weekday_day": {
+  "departure": "2026-11-10T10:00:00",
+  "blocks": 500,
+  "planned_vs_r5_p5_agree": 0.9449112087072752,
+  "walkup_vs_r5_p50_agree": 0.9601553052001782,
+  "share_reach_model_planned": 0.5511106867799631,
+  "share_reach_r5_p5": 0.5225001591241805,
+  "share_reach_model_walkup": 0.44745719559544267,
+  "share_reach_r5_p50": 0.43294507033288776,
+  "minutes_model_minus_r5_p5_median": -0.08672453169600303,
+  "minutes_model_minus_r5_p5_iqr": [
+   -1.6899013956488922,
+   1.53592536063098
+  ]
+ },
+ "weekday_evening": {
+  "departure": "2026-11-10T17:30:00",
+  "blocks": 500,
+  "planned_vs_r5_p5_agree": 0.9273757240150213,
+  "walkup_vs_r5_p50_agree": 0.9810642225192541,
+  "share_reach_model_planned": 0.32302208643625485,
+  "share_reach_r5_p5": 0.2921519954172236,
+  "share_reach_model_walkup": 0.18331105594806188,
+  "share_reach_r5_p50": 0.17907835274648334,
+  "minutes_model_minus_r5_p5_median": 0.3846988070865436,
+  "minutes_model_minus_r5_p5_iqr": [
+   -1.3726004792676334,
+   1.8886257063171374
+  ]
+ },
+ "saturday": {
+  "departure": "2026-11-14T10:00:00",
+  "blocks": 500,
+  "planned_vs_r5_p5_agree": 0.9500031824836103,
+  "walkup_vs_r5_p50_agree": 0.9760995480873274,
+  "share_reach_model_planned": 0.310546750684234,
+  "share_reach_r5_p5": 0.3052320030551843,
+  "share_reach_model_walkup": 0.16249761313729233,
+  "share_reach_r5_p50": 0.15272738845394945,
+  "minutes_model_minus_r5_p5_median": 0.0991312240253377,
+  "minutes_model_minus_r5_p5_iqr": [
+   -1.3942342990881889,
+   1.9476884494648878
+  ]
+ }
+}

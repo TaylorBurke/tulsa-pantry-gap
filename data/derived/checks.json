@@ -1,0 +1,104 @@
+{
+ "acs_tracts_sum_to_county": {
+  "ok": true,
+  "tract_sum": 680794,
+  "county_row": 680794
+ },
+ "blocks_sum_to_2020_census": {
+  "ok": true,
+  "block_sum": 669279,
+  "census_2020": 669279
+ },
+ "every_tract_has_blocks": {
+  "ok": true,
+  "tracts": 208
+ },
+ "hand_spot_check_three_tracts": {
+  "ok": true,
+  "tracts": [
+   {
+    "GEOID": "40143001000",
+    "label": "Tulsa: near E Pine St",
+    "raw": {
+     "B17001_E001": "1299",
+     "B17001_E002": "416",
+     "B25044_E001": "711",
+     "B25044_E003": "13",
+     "B25044_E010": "317",
+     "B22003_E001": "711",
+     "B22003_E002": "347"
+    },
+    "poverty_rate": 0.3202,
+    "no_vehicle_rate": 0.4641,
+    "snap_rate": 0.488,
+    "max_abs_diff": 0.0
+   },
+   {
+    "GEOID": "40143009200",
+    "label": "Sand Springs: near W 11th St",
+    "raw": {
+     "B17001_E001": "3439",
+     "B17001_E002": "235",
+     "B25044_E001": "1353",
+     "B25044_E003": "24",
+     "B25044_E010": "74",
+     "B22003_E001": "1353",
+     "B22003_E002": "158"
+    },
+    "poverty_rate": 0.0683,
+    "no_vehicle_rate": 0.0724,
+    "snap_rate": 0.1168,
+    "max_abs_diff": 0.0
+   },
+   {
+    "GEOID": "40143009016",
+    "label": "Tulsa: near E 51st St & 177th E Ave",
+    "raw": {
+     "B17001_E001": "4240",
+     "B17001_E002": "99",
+     "B25044_E001": "1167",
+     "B25044_E003": "0",
+     "B25044_E010": "0",
+     "B22003_E001": "1167",
+     "B22003_E002": "11"
+    },
+    "poverty_rate": 0.0233,
+    "no_vehicle_rate": 0.0,
+    "snap_rate": 0.0094,
+    "max_abs_diff": 0.0
+   }
+  ]
+ },
+ "usda_sram_cross_source": {
+  "ok": true,
+  "tracts_matched": 208,
+  "correlations": {
+   "poverty": 1.0,
+   "no_vehicle": 0.981,
+   "snap": 0.988
+  },
+  "note": "USDA's household denominators are 2020-census counts, so zero-vehicle and SNAP shares differ slightly; poverty rates should match"
+ },
+ "usda_lila_overlap": {
+  "lila_vehicle_tracts": 0,
+  "lila_half_tracts": 24,
+  "lila_half_and_high_need": 13,
+  "high_need_tracts": 52
+ },
+ "travel_time_brute_force": {
+  "ok": true,
+  "pairs": 300,
+  "brute_beats_model_by_3min_plus": 0,
+  "same_reachable_verdict": 1.0,
+  "model_reaches_but_one_bus_cannot": 0,
+  "one_bus_reaches_but_model_cannot": 0
+ },
+ "suspicious_hours": [
+  {
+   "name": "CrossPoint",
+   "day": 6,
+   "start": 600,
+   "end": 1380
+  }
+ ]
+}

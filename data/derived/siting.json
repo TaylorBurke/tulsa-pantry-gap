@@ -1,0 +1,162 @@
+{
+ "weekday_evening": {
+  "people_in_poverty_without_access": 58995,
+  "sites": [
+   {
+    "stop_id": "7056",
+    "stop_name": "31st St & Garnett Rd",
+    "lon": -95.85152,
+    "lat": 36.11911,
+    "people_in_poverty_newly_within_budget": 9995,
+    "residents_newly_within_budget": 42686,
+    "main_tracts": [
+     {
+      "GEOID": "40143007306",
+      "label": "Tulsa: near E 31st St & 129th East Ave",
+      "poor_est": 1541
+     },
+     {
+      "GEOID": "40143009008",
+      "label": "Tulsa: near E 41st St & Mingo Rd",
+      "poor_est": 1224
+     },
+     {
+      "GEOID": "40143009006",
+      "label": "Tulsa: near E 41st St & 129th East Ave",
+      "poor_est": 1117
+     }
+    ]
+   },
+   {
+    "stop_id": "9013",
+    "stop_name": "71st St & Wheeling Dr",
+    "lon": -95.96288,
+    "lat": 36.06092,
+    "people_in_poverty_newly_within_budget": 9921,
+    "residents_newly_within_budget": 50831,
+    "main_tracts": [
+     {
+      "GEOID": "40143006801",
+      "label": "Tulsa: near E 61st St & Peoria Ave",
+      "poor_est": 1466
+     },
+     {
+      "GEOID": "40143007608",
+      "label": "Tulsa: near E 61st St & Peoria Ave",
+      "poor_est": 1078
+     },
+     {
+      "GEOID": "40143007641",
+      "label": "Tulsa: near E 81st St & Utica Ave",
+      "poor_est": 958
+     }
+    ]
+   },
+   {
+    "stop_id": "7012",
+    "stop_name": "1st St & Cincinnati Ave",
+    "lon": -95.99011,
+    "lat": 36.15609,
+    "people_in_poverty_newly_within_budget": 5319,
+    "residents_newly_within_budget": 26603,
+    "main_tracts": [
+     {
+      "GEOID": "40143004600",
+      "label": "Tulsa: near E 21st St",
+      "poor_est": 1245
+     },
+     {
+      "GEOID": "40143002500",
+      "label": "Tulsa: near E Archer St",
+      "poor_est": 1086
+     },
+     {
+      "GEOID": "40143003100",
+      "label": "Tulsa: near E 11th St",
+      "poor_est": 438
+     }
+    ]
+   }
+  ]
+ },
+ "saturday": {
+  "people_in_poverty_without_access": 61070,
+  "sites": [
+   {
+    "stop_id": "9013",
+    "stop_name": "71st St & Wheeling Dr",
+    "lon": -95.96288,
+    "lat": 36.06092,
+    "people_in_poverty_newly_within_budget": 8717,
+    "residents_newly_within_budget": 44833,
+    "main_tracts": [
+     {
+      "GEOID": "40143006801",
+      "label": "Tulsa: near E 61st St & Peoria Ave",
+      "poor_est": 1456
+     },
+     {
+      "GEOID": "40143007608",
+      "label": "Tulsa: near E 61st St & Peoria Ave",
+      "poor_est": 1078
+     },
+     {
+      "GEOID": "40143007644",
+      "label": "Tulsa: near E 61st St & Utica Ave",
+      "poor_est": 955
+     }
+    ]
+   },
+   {
+    "stop_id": "7643",
+    "stop_name": "4th St & Harvard Ave",
+    "lon": -95.9407,
+    "lat": 36.15603,
+    "people_in_poverty_newly_within_budget": 7958,
+    "residents_newly_within_budget": 32278,
+    "main_tracts": [
+     {
+      "GEOID": "40143002100",
+      "label": "Tulsa: near E 11th St",
+      "poor_est": 1057
+     },
+     {
+      "GEOID": "40143002500",
+      "label": "Tulsa: near E Archer St",
+      "poor_est": 986
+     },
+     {
+      "GEOID": "40143000300",
+      "label": "Tulsa: near E Apache St & Harvard Ave",
+      "poor_est": 940
+     }
+    ]
+   },
+   {
+    "stop_id": "7098",
+    "stop_name": "Denver Avenue Station",
+    "lon": -95.99388,
+    "lat": 36.15162,
+    "people_in_poverty_newly_within_budget": 3645,
+    "residents_newly_within_budget": 20406,
+    "main_tracts": [
+     {
+      "GEOID": "40143004600",
+      "label": "Tulsa: near E 21st St",
+      "poor_est": 1245
+     },
+     {
+      "GEOID": "40143002700",
+      "label": "Tulsa: near E 11th St",
+      "poor_est": 489
+     },
+     {
+      "GEOID": "40143003100",
+      "label": "Tulsa: near E 11th St",
+      "poor_est": 438
+     }
+    ]
+   }
+  ]
+ }
+}
