@@ -92,6 +92,15 @@ def flyer(w, title, k):
             f'<ol>{"".join(items)}</ol><div class="tabs" aria-hidden="true">{"".join(tabs)}</div></article>')
 
 
+def brief_note(kind, r):
+    """Post-it link to the printable brief: floating on desktop, inline at the top and end on narrow screens."""
+    return (f'<a class="brief-note {kind}" href="brief/tulsa-pantry-gap-brief.pdf" download="tulsa-pantry-gap-brief.pdf" '
+            f'style="--r:{r}deg"><span class="bn-hand" aria-hidden="true">Take it with you</span>'
+            '<span class="bn-main"><svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M8 1.5v9m0 0L4.5 7M8 10.5 11.5 7M2.5 13.5h11" '
+            'fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>'
+            'Download the brief</span><span class="bn-sub">Two printable pages, PDF</span></a>')
+
+
 ph38 = PHOTOS["aero-stop-8005"]
 checks = "".join(f'<li><span class="tick" aria-hidden="true"></span><strong>{e(h)}.</strong> {e(d)}</li>'
                  for h, d in checks_items())
@@ -117,6 +126,7 @@ page = f"""<!doctype html>
 <h1>After 5pm and on Saturdays, about half of Tulsa's highest-need neighborhoods can't reach an open pantry without a car.</h1>
 <p class="dek">On a weekday, <mark>{pct(DAY)}</mark> of people in the county's {C["high_need_tracts"]} highest-need tracts can walk or ride the bus to an open food pantry within {CFG["budget_min"]} minutes. After 5pm it's <mark>{pct(EVE)}</mark>. On a Saturday, <mark>{pct(SAT)}</mark>.</p>
 <p class="byline">By <a href="{AUTHOR_URL}">{AUTHOR}</a>, from public data. Not a product of the Food Bank of Eastern Oklahoma.</p>
+{brief_note("inline", 1.2)}
 </article>
 <div class="pick"><p class="pick-q">When do you need a pantry?</p>
 {window_sheets("Top")}</div>
@@ -197,9 +207,11 @@ page = f"""<!doctype html>
 <section class="close" aria-label="Pick a time again">
 <p class="close-line">Pick a time. The map, the sheets and the gap list all change with it.</p>
 {window_sheets("Bottom")}
+{brief_note("inline", -1.4)}
 <p class="foot">By <a href="{AUTHOR_URL}">{AUTHOR}</a>. Built {e(S["built"])} from public data. Pantry hours change, so call before going, or dial 2-1-1. Not affiliated with the Food Bank of Eastern Oklahoma or MetroLink Tulsa. Photo by {e(ph38["credit"])}, {e(ph38["license"])}. Text and data CC BY 4.0, code MIT.</p>
 </section>
 </main>
+{brief_note("float", -2)}
 <script>window.PANTRY_GAP = {{"mapAspect": 0.78, "focusHighNeed": true, "windows": {window_js()}, "ranking": {rank_js()}}};</script>
 <script src="assets/vendor/d3.min.js"></script>
 <script src="assets/map.js"></script>

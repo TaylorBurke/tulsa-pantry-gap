@@ -329,3 +329,22 @@ table.ruled tr[data-geoid]:hover td, table.ruled tr[data-geoid]:focus-visible td
   .strip, .zoom, .ticks { display: none; }
   body { background: #fff; }
 }
+
+/* download-the-brief post-it: floating on desktop, inline (top + end) on narrow screens */
+.brief-note { display: inline-flex; flex-direction: column; gap: 1px; background: var(--sticky); color: var(--ink);
+  text-decoration: none; padding: 10px 16px 12px; box-shadow: var(--shadow); transform: rotate(var(--r, -2deg));
+  max-width: 250px; transition: transform .15s ease, box-shadow .15s ease; }
+.brief-note .bn-hand { font-family: var(--hand); color: var(--marker); font-size: 16px; line-height: 1.25; }
+.brief-note .bn-main { display: inline-flex; align-items: center; gap: 6px; font-weight: 800; font-size: 16px; line-height: 1.3;
+  text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+.brief-note .bn-sub { font-size: 13px; color: var(--ink-2); }
+.brief-note:hover { box-shadow: var(--shadow-up); transform: rotate(var(--r, -2deg)) translateY(-2px); }
+.brief-note.float { position: fixed; right: 24px; bottom: 24px; z-index: 50; }
+.brief-note.inline { display: none; margin-top: 16px; }
+.close .brief-note.inline { margin: 8px 0 20px; }
+@media (max-width: 1080px) {
+  .brief-note.float { display: none; }
+  .brief-note.inline { display: inline-flex; }
+}
+@media (prefers-reduced-motion: reduce) { .brief-note { transition: none; } }
+@media print { .brief-note { display: none; } }
