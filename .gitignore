@@ -7,3 +7,4 @@ data/derived/mtta_gtfs_for_r5.zip
 data/derived/validate_r5.log
 .wrangler/
 reports/
+dist/

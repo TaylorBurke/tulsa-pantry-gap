@@ -7,7 +7,7 @@ gaps, a flyer of mobile pantry stops and a stapled method packet. Every number
 comes from story.json through sitekit; nothing here is typed by hand.
 """
 from sitekit import (S, W, ORDER, P, CFG, C, PT, RANK, OPEN, POOR_HN, DAY, EVE, SAT, TOP_SAT, LEAD, HW, WALK,
-                     SITING, PHOTOS, AUTHOR, AUTHOR_URL, REPO_URL, ROOT, e, pct, n, about, half_words,
+                     SITING, PHOTOS, AUTHOR, AUTHOR_URL, REPO_URL, KAGGLE_URL, ROOT, e, pct, n, about, half_words,
                      short_label, window_js, rank_js, pantry_sheets, checks_items, caveats_items, src_links)
 
 OUT = ROOT / "site"
@@ -200,7 +200,7 @@ page = f"""<!doctype html>
 <div><h3>Checked</h3><ul class="checks">{checks}</ul></div>
 <div>
 <h3>What could be wrong</h3><ul class="caveats">{caveats}</ul>
-<p class="fine">All sources, licenses and caveats: <a href="sources.html">sources page</a>. Code and data: <a href="{REPO_URL}">{REPO_URL.removeprefix("https://")}</a>. The same story as a plain article: <a href="classic/">classic edition</a>.</p>
+<p class="fine">All sources, licenses and caveats: <a href="sources.html">sources page</a>. Code and data: <a href="{REPO_URL}">{REPO_URL.removeprefix("https://")}</a>. Data download: <a href="{KAGGLE_URL}">Kaggle dataset</a>. The same story as a plain article: <a href="classic/">classic edition</a>.</p>
 </div>
 </div>
 </article>

@@ -15,6 +15,7 @@ import geopandas as gpd
 ROOT = Path(__file__).parent
 AUTHOR, AUTHOR_URL = "Taylor Burke", "https://www.taylorburke.me/"
 REPO_URL = "https://github.com/TaylorBurke/tulsa-pantry-gap"
+KAGGLE_URL = "https://www.kaggle.com/datasets/taylorwburke/tulsa-pantry-gap"
 S = json.loads((ROOT / "data" / "derived" / "story.json").read_text())
 REG = tomllib.loads((ROOT / "sources.toml").read_text())
 e = html.escape
@@ -288,7 +289,7 @@ page = f"""<!doctype html>
 </section>
 
 <footer>
-<p>By <a href="{AUTHOR_URL}">{AUTHOR}</a>. Built {e(S["built"])} from public data. Code, method and derived data: <a href="{REPO_URL}">{REPO_URL.removeprefix("https://")}</a>; everything rebuilds from the raw downloads with <code>make</code>. Text and derived data CC BY 4.0, code MIT. Not affiliated with the Food Bank of Eastern Oklahoma or MetroLink Tulsa. Pantry information changes: call a pantry before going, or dial 2-1-1.</p>
+<p>By <a href="{AUTHOR_URL}">{AUTHOR}</a>. Built {e(S["built"])} from public data. Code, method and derived data: <a href="{REPO_URL}">{REPO_URL.removeprefix("https://")}</a>; the tract and block tables are also a <a href="{KAGGLE_URL}">Kaggle dataset</a>; everything rebuilds from the raw downloads with <code>make</code>. Text and derived data CC BY 4.0, code MIT. Not affiliated with the Food Bank of Eastern Oklahoma or MetroLink Tulsa. Pantry information changes: call a pantry before going, or dial 2-1-1.</p>
 <p><a href="../sources.html">All sources, licenses and caveats</a></p>
 </footer>
 </div>

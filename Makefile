@@ -5,11 +5,12 @@
 #   make serve     preview at http://localhost:8765
 #   make smoke     headless browser test of the classic page (needs `make serve` running)
 #   make audit     check the Food Finder listings for data problems -> reports/ (git-ignored)
+#   make kaggle    package derived tract/block tables as a Kaggle dataset -> dist/kaggle/
 #   make brief     print the two-page brief (site/brief/) to PDF with headless Chrome
 PY := uv run --frozen python -W ignore
 A := cd analysis &&
 
-.PHONY: all fetch refresh analysis check site brief audit validate serve smoke clean
+.PHONY: all fetch refresh analysis check site brief audit kaggle kaggle-notebook validate serve smoke clean
 
 all: fetch analysis check site
 
@@ -38,6 +39,14 @@ brief: site
 audit:
 	$(PY) tools/listing_audit.py
 	node tools/pdf.mjs reports/food-finder-audit.html reports/food-finder-audit.pdf
+
+kaggle:
+	$(PY) tools/kaggle_package.py
+	uv run --frozen --with matplotlib python -W ignore tools/kaggle_cover.py
+
+kaggle-notebook: kaggle
+	python3 notebooks/kaggle/build_notebook.py
+	cd notebooks/kaggle && uv run --frozen --with matplotlib --with nbconvert --with ipykernel jupyter nbconvert --to notebook --execute tulsa-pantry-gap-starter.ipynb --output ../../dist/kaggle-notebook-run.ipynb
 
 validate:
 	cd fetch && $(PY) fetch_osm.py

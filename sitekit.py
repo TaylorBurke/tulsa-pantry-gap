@@ -18,6 +18,7 @@ S = json.loads((ROOT / "data" / "derived" / "story.json").read_text())
 REG = tomllib.loads((ROOT / "sources.toml").read_text())
 AUTHOR, AUTHOR_URL = "Taylor Burke", "https://www.taylorburke.me/"
 REPO_URL = "https://github.com/TaylorBurke/tulsa-pantry-gap"
+KAGGLE_URL = "https://www.kaggle.com/datasets/taylorwburke/tulsa-pantry-gap"
 e = html.escape
 W = S["windows"]
 ORDER = ["weekday_day", "weekday_evening", "saturday"]
