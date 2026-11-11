@@ -202,7 +202,7 @@ page = f"""<!doctype html>
 <p class="eyebrow">Tulsa County · food access without a car</p>
 <h1>Tulsa Pantry Gap Map</h1>
 <p class="dek">In Tulsa County's highest-need neighborhoods, {frac_words(day)} residents can reach an open food pantry on foot or by bus within {cfg["budget_min"]} minutes on a weekday. {dek_tail}</p>
-<p class="byline">By <a href="{AUTHOR_URL}">{AUTHOR}</a>. A personal project built only on public data. Not a product of, or endorsed by, the Food Bank of Eastern Oklahoma. Pantry hours as listed in its public Food Finder; bus schedule valid {gtfs_from} to {gtfs_to}.</p>
+<p class="byline">By <a href="{AUTHOR_URL}">{AUTHOR}</a>. A personal project built only on public data. Not a product of, or endorsed by, the Food Bank of Eastern Oklahoma. Pantry hours as listed in its public Food Finder (as of {S["data_as_of"]}); bus schedule valid {gtfs_from} to {gtfs_to}.</p>
 <div class="hero"><p class="hero-head">Share of residents in the {c["high_need_tracts"]} highest-need tracts who can reach an open pantry within {cfg["budget_min"]} minutes, walking and riding the bus</p>
 <div class="hero-stats">{hero}</div></div>
 </header>
@@ -289,7 +289,7 @@ page = f"""<!doctype html>
 </section>
 
 <footer>
-<p>By <a href="{AUTHOR_URL}">{AUTHOR}</a>. Built {e(S["built"])} from public data. Code, method and derived data: <a href="{REPO_URL}">{REPO_URL.removeprefix("https://")}</a>; the tract and block tables are also a <a href="{KAGGLE_URL}">Kaggle dataset</a>; everything rebuilds from the raw downloads with <code>make</code>. Text and derived data CC BY 4.0, code MIT. Not affiliated with the Food Bank of Eastern Oklahoma or MetroLink Tulsa. Pantry information changes: call a pantry before going, or dial 2-1-1.</p>
+<p>By <a href="{AUTHOR_URL}">{AUTHOR}</a>. Pantry data as of {e(S["data_as_of"])} (built {e(S["built"])}), from public data. Code, method and derived data: <a href="{REPO_URL}">{REPO_URL.removeprefix("https://")}</a>; the tract and block tables are also a <a href="{KAGGLE_URL}">Kaggle dataset</a>; everything rebuilds from the raw downloads with <code>make</code>. Text and derived data CC BY 4.0, code MIT. Not affiliated with the Food Bank of Eastern Oklahoma or MetroLink Tulsa. Pantry information changes: call a pantry before going, or dial 2-1-1.</p>
 <p><a href="../sources.html">All sources, licenses and caveats</a></p>
 </footer>
 </div>

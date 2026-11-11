@@ -184,6 +184,9 @@ def build():
     need_corr = [r(zc[0, 1], 2), r(zc[0, 2], 2), r(zc[1, 2], 2)]
     story = {
         "built": date.today().isoformat(),
+        # when the Food Finder listings (the fast-changing input) were last downloaded
+        "data_as_of": max(i["fetched_at"] for i in
+                          json.loads((RAW / "fbeo_finder" / "manifest.json").read_text()))[:10],
         "county": {"acs_pop": int(county["pop"]), "census_2020_pop": int(b.POP20.sum()),
                    "tracts": len(t), "high_need_tracts": int(t.high_need.sum()),
                    "people_in_poverty": int(county["poor"]),

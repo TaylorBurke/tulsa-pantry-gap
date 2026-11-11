@@ -95,6 +95,10 @@ Cloudflare Pages project `tulsa-pantry-gap`; `site/` is the whole static site. A
 npx wrangler@4 pages deploy site --project-name tulsa-pantry-gap --branch main --commit-dirty=true
 ```
 
+### Monthly refresh
+
+`.github/workflows/monthly-refresh.yml` runs on the 5th of every month (and on demand from the Actions tab). It runs `make refresh`, rebuilds the brief PDF, commits `data/derived` and `site` to `main`, and deploys. The footer's "Pantry data as of" date is the Food Finder download date. A failed check or headline assertion stops the job before anything is committed or deployed. Needs repo secrets `CLOUDFLARE_API_TOKEN` (Pages edit) and `CLOUDFLARE_ACCOUNT_ID`.
+
 ## License
 
 - **Code**: MIT, see `LICENSE`.

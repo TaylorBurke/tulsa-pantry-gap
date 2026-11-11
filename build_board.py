@@ -208,7 +208,7 @@ page = f"""<!doctype html>
 
 <section class="close" aria-label="About this page">
 {brief_note("inline", -1.4)}
-<p class="foot">By <a href="{AUTHOR_URL}">{AUTHOR}</a>. Built {e(S["built"])} from public data. Pantry hours change, so call before going, or dial 2-1-1. Not affiliated with the Food Bank of Eastern Oklahoma or MetroLink Tulsa. Photo by {e(ph38["credit"])}, {e(ph38["license"])}. Text and data CC BY 4.0, code MIT.</p>
+<p class="foot">By <a href="{AUTHOR_URL}">{AUTHOR}</a>. Pantry data as of {e(S["data_as_of"])} (built {e(S["built"])}), from public data. Pantry hours change, so call before going, or dial 2-1-1. Not affiliated with the Food Bank of Eastern Oklahoma or MetroLink Tulsa. Photo by {e(ph38["credit"])}, {e(ph38["license"])}. Text and data CC BY 4.0, code MIT.</p>
 </section>
 </main>
 {brief_note("float", -2)}

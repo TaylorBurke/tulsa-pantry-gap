@@ -169,7 +169,7 @@ def siting_col(w, head):
 qr = segno.make(SITE_URL, error="m").svg_inline(scale=2.4, border=0, dark="#1a1714")
 fold = POOR_HN["saturday"] / POOR_HN["weekday_day"]
 fold_words = "about ten times as many" if 8 <= fold <= 12 else f"{fold:.0f} times as many"
-built = dt.date.fromisoformat(S["built"]).strftime("%B %-d, %Y")
+built = dt.date.fromisoformat(S["data_as_of"]).strftime("%B %-d, %Y")
 caveats = "".join(f"<li><strong>{e(h)}.</strong> {e(d)}</li>" for h, d in caveats_items())
 tiles = "".join(
     f'<div class="tile{"" if w == "weekday_day" else " hot"}"><span class="tl">{e(W[w]["label"])}</span>'
@@ -187,7 +187,7 @@ page = f"""<!doctype html>
 </head><body>
 <article class="page">
 <header class="top"><p class="kicker">Tulsa Pantry Gap Map · Brief</p>
-<p class="by">By {e(AUTHOR)} · {built} · A personal project from public data, not a product of the Food Bank of Eastern Oklahoma</p></header>
+<p class="by">By {e(AUTHOR)} · Pantry data as of {built} · A personal project from public data, not a product of the Food Bank of Eastern Oklahoma</p></header>
 <h1>After 5pm and on Saturdays, about half of Tulsa's highest-need neighborhoods can't reach an open pantry without a car.</h1>
 <p class="dek">Tulsa County's {C["high_need_tracts"]} highest-need census tracts are home to {about(C["high_need_pop"], "")} people,
 {about(C["high_need_poor"], "")} of them below the poverty line. Walking and riding the bus, {CFG["budget_min"]} minutes door to door,
