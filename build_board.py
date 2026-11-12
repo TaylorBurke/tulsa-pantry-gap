@@ -144,8 +144,9 @@ page = f"""<!doctype html>
 <div class="legend" id="legend"></div></div>
 <div class="map-side"><aside class="sticky" id="info" aria-live="polite"></aside>
 <p class="src">Sources: {src_links("", "acs", "fbeo_finder", "gtfs", "tiger")}.</p>
+</div>
 <details class="table-view"><summary>Every tract as a table (<span id="tract-table-win"></span>)</summary>
-<div class="table-scroll"><table class="ruled" id="tract-table"><thead><tr><th>Where</th><th class="num">Poverty</th><th class="num">No car</th><th class="num">SNAP</th><th class="num">Can reach</th><th class="num">People in poverty with none in reach</th></tr></thead><tbody></tbody></table></div></details></div>
+<div class="table-scroll"><table class="ruled" id="tract-table"><thead><tr><th>Where</th><th class="num">Poverty</th><th class="num">No car</th><th class="num">SNAP</th><th class="num">Can reach</th><th class="num">People in poverty with none in reach</th></tr></thead><tbody></tbody></table></div></details>
 </figure>
 </section>
 

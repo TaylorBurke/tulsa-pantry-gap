@@ -171,7 +171,7 @@ main { max-width: 1320px; margin: 0 auto; padding: 0 var(--space) 64px; }
 .sticky .hours { display: block; margin: 6px 0; }
 .sticky .flag { display: inline-block; font-weight: 700; font-size: 12.5px; background: var(--hl); padding: 0 6px; margin: 2px 4px 2px 0; }
 .src { font-size: 13px; color: var(--ink-2); margin: 14px 0 0; }
-.table-view { margin-top: 10px; font-size: 14px; }
+.table-view { grid-column: 1 / -1; margin-top: 10px; font-size: 14px; }
 .table-view summary { cursor: pointer; padding: 8px 0; font-weight: 600; }
 .table-scroll { overflow: auto; max-height: 440px; -webkit-overflow-scrolling: touch; }
 .clipboard .table-scroll { max-height: none; }
